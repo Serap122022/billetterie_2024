@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Génération de QR Code
+{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+
+    <style>
+        .custom-space {
+            margin-top: 90px !important; 
+        }
+    </style>
+
+    <div class="container text-center mt-5">
+        <h1>Votre QR Code</h1>
+        <p>Voici votre QR Code. Vous pouvez le télécharger ou l'afficher.</p>
+        <img src="{{ qrCodePath }}" alt="QR Code" class="img-fluid">
+        <br>
+        <div class="d-flex justify-content-center mt-3">
+            <a href="{{ qrCodePath }}" download class="btn btn-primary me-2" id="downloadLink">Télécharger le QR Code</a>
+            <a href="{{ path('payment_history') }}" class="btn btn-secondary">Voir l'historique des achats</a>
+        </div>
+    </div>
+
+    {% include "home/_footer.html.twig" %} 
+
+    <script>
+        // Déclencher automatiquement le clic sur le lien pour télécharger le QR Code
+        document.getElementById('downloadLink').click();
+    </script>
+{% endblock %}

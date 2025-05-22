@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Centre d'Aide - Paris 2024{% endblock %}
+{% block body %}
+
+	{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px;
+    }
+</style>
+
+<div class="container custom-space">
+    <h1 class="text-center mb-4">Centre d'Aide - Paris 2024</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                L'assistance téléphonique Mentally Fit et la Hotline Intégrité et Conformité proposeront aux athlètes un soutien dédié, confidentiel et anonyme pendant les Jeux Olympiques et Paralympiques de Paris 2024. Que vous soyez en proie à de l'anxiété ou que vous ayez été témoin de quelque chose de suspect, nous vous expliquons à qui vous adresser selon la situation.
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h2>Obtenez de l'aide et des conseils en matière de santé mentale à Paris 2024</h2>
+        <p>L'assistance téléphonique Mentally Fit est un service confidentiel 24 h/24 dédié au soutien de la santé mentale des athlètes pendant les Jeux.</p>
+        <p>Les athlètes peuvent discuter de leurs difficultés avec un(e) professionnel(le) et recevoir un suivi immédiat dans plus de 70 langues.</p>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">CONTACTER L'ASSISTANCE TÉLÉPHONIQUE MENTALLY FIT</h5>
+                <p>Vous pouvez également vous rendre dans l'espace "Sport en toute sécurité" ou "Mind Zone" à l'Athlete365 House pour une consultation confidentielle.</p>
+                <a href="#" class="btn btn-primary">Contactez Mentally Fit</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Signalez tout cas de harcèlement ou d'abus à la Hotline Intégrité et Conformité du CIO</h2>
+        <p>Si vous avez été victime ou témoin de harcèlement ou d'abus (psychologique, physique ou sexuel), vous pouvez signaler l'incident de manière confidentielle et anonyme.</p>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">SIGNALER UN INCIDENT</h5>
+                <p>Les responsables de la protection du CIO sont présents dans l'espace "Sport en toute sécurité" pour vous écouter et prendre des mesures si nécessaire.</p>
+                <a href="#" class="btn btn-danger">Signaler un incident</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Signalez vos soupçons de manipulation de compétition</h2>
+        <p>La Hotline Intégrité et Conformité du CIO permet aux athlètes de signaler toute approche ou activité suspecte en lien avec la manipulation des compétitions.</p>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">SIGNALER UNE ACTIVITÉ SUSPECTE</h5>
+                <p>Si vous êtes témoins de comportements suspects ou de tentatives de manipulation, signalez-les immédiatement via la hotline.</p>
+                <a href="#" class="btn btn-warning">Signaler une activité suspecte</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>En savoir plus sur les services disponibles pendant les Jeux</h2>
+        <p>Pour plus d'informations sur les services d'assistance et de soutien, veuillez consulter notre page spéciale dédiée à Paris 2024.</p>
+        {# <a href="#" class="btn btn-info">En savoir plus</a> #}
+         <a href="{{ path('app_home') }}" class="btn btn-info">Retour à la page d'accueil</a>
+    </section>
+</div>
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Méta-informations -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Réservez vos billets pour les Jeux Olympiques 2024 en France. Choisissez parmi nos offres Duo et Familiale.">
+    <meta name="keywords" content="Jeux Olympiques, réservation, billets, offres Duo, offres Familiale, France">
+    <meta name="author" content="Jeux Olympiques 2024">
+    
+    <!-- Titre de la page -->
+    <title>
+        {% block title %}Billetterie Jeux Olympiques Paris 2024{% endblock %}
+    </title>
+    {% block metaDescription %}{% endblock %}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logosJO/logo_color.svg') }}" alt="Logo de billetterie Jeux Olympiques">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
+
+    <!-- Webpack Encore : CSS compilé (app.scss, bootstrap.min.css, etc.) -->
+    {{ encore_entry_link_tags('app') }}
+
+    <!-- Feuilles de style additionnelles -->
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <!-- Contenu principal -->
+    {% block body %}{% endblock %}
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+    <!-- Font Awesome Kit (déjà inclus plus haut, peut être supprimé si doublon) -->
+    {# <script src="https://kit.fontawesome.com/xxxx.js" crossorigin="anonymous"></script> #}
+
+    <!-- JS WOW -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer></script>
+
+    <!-- Webpack Encore : JS compilé (bootstrap.bundle.min.js, script.js, etc.) -->
+    {{ encore_entry_script_tags('app') }}
+
+    <!-- Scripts personnalisés supplémentaires -->
+    {% block javascripts %}{% endblock %}
+
+    <!-- QR Code -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/minified/html5-qrcode.min.js" defer></script>
+</body>
+</html>

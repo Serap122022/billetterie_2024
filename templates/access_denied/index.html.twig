@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès refusé{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 500px;">
+                        <img src="{{ asset('assets/img/acces-refuse.png') }}" class="card-img-top" alt="Access Denied" style="max-width: 400px; max-height: 500px;">
+                    </div>
+                    <div class="card-body">
+                         <h5 class="card-title" style="font-size: 28px;">Vous n'êtes pas autorisé à accéder à cette page</h5> 
+                     <a href="{{ path('app_home') }}" class="btn btn-primary"> 
+                            <i class="bi bi-arrow-left"></i> Retour à la page d'accueil
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

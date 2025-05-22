@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur{% endblock %}
+
+{% block body %}
+
+  <style>
+        .custom-message {
+            font-size: 50px !important; 
+            font-weight: bold !important; /* Rend le texte en gras */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 500px;">
+                        {% if errorMessage == 'Aucune donnée reçue.' %}
+                            <div class="message">
+                                <img src="{{ asset('assets/img/error/non_valide.png') }}" class="card-img-top" alt="Aucune donnée reçue" style="max-width: 400px; max-height: 500px;">
+                                <p class="custom-message text-danger">Aucune donnée reçue.</p>
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> Billet non valable
+                                </button>
+                            </div>
+                        {% elseif errorMessage == 'Billet invalide.' %}
+                            <div class="message">
+                                <img src="{{ asset('assets/img/error/non_valide.png') }}" class="card-img-top" alt="Billet invalide" style="max-width: 400px; max-height: 500px;">
+                                <p class="custom-message text-danger">Billet invalide.</p>
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> Billet non valable
+                                </button>
+                            </div>
+                        {% elseif errorMessage == 'Commande introuvable.' %}
+                            <div class="message">
+                                <img src="{{ asset('assets/img/error/non_valide.png') }}" class="card-img-top" alt="Commande introuvable" style="max-width: 400px; max-height: 500px;">
+                                <p class="custom-message text-danger">Commande introuvable.</p>
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> Billet non valable
+                                </button>
+                            </div>
+                        {% elseif errorMessage == 'Billet déjà utilisé.' %}
+                            <div class="message">
+                                <img src="{{ asset('assets/img/error/non_valide.png') }}" class="card-img-top" alt="Billet déjà utilisé" style="max-width: 400px; max-height: 500px;">
+                                <p class="custom-message text-danger">Billet déjà utilisé.</p>
+                                <button class="btn btn-danger">
+                                    <i class="fas fa-exclamation-triangle"></i> Billet non valable
+                                </button>
+                            </div>
+                        {% else %}
+                            <div class="message">
+                                <img src="{{ asset('assets/img/error/validé.png') }}" class="card-img-top" alt="Billet validé" style="max-width: 400px; max-height: 500px;">
+                                <p class="custom-message text-success">Billet validé.</p>
+                                <button class="btn btn-success">
+                                    <i class="fas fa-check-circle"></i> Billet validé
+                                </button>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

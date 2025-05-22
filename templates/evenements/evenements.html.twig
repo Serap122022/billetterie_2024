@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des événements olympiques{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+
+    
+    <style>
+        .custom-space {
+            margin-top: 90px !important;
+        }
+
+        .card-outer {
+            width: 100% !important;  /* La carte extérieure occupe 100% de la largeur */
+            margin: 0 auto 20px auto;  /* Centre la carte extérieure et ajouter un espace de 20px en bas */
+            box-sizing: border-box;
+            border: 2px solid grey; /* Bordure grise autour de la carte extérieure */
+            padding: 20px; /* Augmente le padding de 20px sur tous les côtés de la carte extérieure */
+            margin-bottom: 40px; /* Espace les cartes entre elles */
+            min-height: 300px; /* Ajuste la valeur selon vos besoins */
+        }
+
+        .card-inner {
+            width: 100% !important;  /* La carte intérieure occupe toute la largeur de la carte extérieure */
+            margin: 0 auto;  /* Centre la carte intérieure */
+            border: 2px solid black; /* Bordure noire autour de la carte intérieure */
+            padding: 15px; /* Augmente le padding de 15px autour de la carte intérieure */
+            text-align: justify; /* Justifie le texte */
+            line-height: 2.6; /* Interligne pour améliorer la lisibilité */
+            overflow: hidden; /* Empêche le débordement */
+        }
+
+        .search-form input, .search-form select {
+            width: 100%; /* S'assure que les champs de recherche occupent toute la largeur */
+        }
+    </style>
+
+    <!-- Application de la classe personnalisée pour l'espace -->
+    <div class="custom-space"></div>
+
+    <h1 class="my-4 text-center" style="font-size: 2rem;">Liste des Evénements Olympiques</h1>
+
+<!-- Formulaire de recherche -->
+<div class="container mb-4">
+    <form method="GET" action="{{ path('evenements_index') }}" class="search-form">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Saisir un événement" 
+                           value="{{ app.request.query.get('search') }}">
+                </div>
+            </div> 
+            <div class="col-md-4">
+                <input type="date" name="filterDate" class="form-control" value="{{ app.request.query.get('filterDate') }}">
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary mt-3">Rechercher</button>
+    </form>
+</div>
+
+
+
+<div class="container my-4">
+        <div class="row">
+            {% for evenement in evenements %}
+                <article class="col-12 mb-4">
+                    <!-- Conteneur extérieur avec une bordure grise -->
+                      <section class="card card-outer" id="{{ evenement.nomEvenement|lower|replace({' ': '-'})|replace({'é': 'e', 'è': 'e', 'ê': 'e'}) }}">
+                        <!-- Carte intérieure avec une bordure noire -->
+                        <div class="card card-inner">
+                            <div class="row g-0">
+                                {% if loop.index is even %}
+                                    <!-- Image à gauche, texte à droite -->
+                                    <div class="col-md-6">
+                                        {% if evenement.urlImage %}
+                                            <img src="{{ asset('assets/img/evenements/' ~ evenement.urlImage) }}" alt="{{ evenement.nomEvenement }}" class="img-fluid w-80">
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-normal" style="font-size: 1.5rem;" id="{{ evenement.nomEvenement|lower|replace({' ': '-'}) }}">{{ evenement.nomEvenement }}</h5>
+                                            <p class="card-text" style="font-size:  0.9rem;">{{ evenement.description }}</p>
+                                            <p class="card-text">
+                                                <small class="text-muted">Date : {{ evenement.dateEvenement|date('d/m/Y H:i') }}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <!-- Texte à gauche, image à droite -->
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                             <h5 class="card-title fw-normal" style="font-size: 1.5rem;" id="{{ evenement.nomEvenement|lower|replace({' ': '-'}) }}">{{ evenement.nomEvenement }}</h5> 
+                                            <p class="card-text" style="font-size: 0.9rem;">{{ evenement.description }}</p>
+                                            <p class="card-text">
+                                                <small class="text-muted">Date : {{ evenement.dateEvenement|date('d/m/Y H:i') }}</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        {% if evenement.urlImage %}
+                                            <img src="{{ asset('assets/img/evenements/' ~ evenement.urlImage) }}" alt="{{ evenement.nomEvenement }}" class="img-fluid w-80">
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+    // On obtient l'élément <select>
+    const eventSelect = document.getElementById('eventSelect');
+
+    // Écouteur d'événements pour gérer le changement de sélection
+    eventSelect.addEventListener('change', function () {
+    });
+
+</script>
+
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

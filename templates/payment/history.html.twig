@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Historique des Paiements
+{% endblock %}
+
+{% block body %}
+{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .form-title {
+        margin-top: 90px !important;
+    }
+</style>
+
+<main class="container mt-5">
+    <article>
+        <h1 class="mb-4 form-title">Historique des Achats</h1>
+
+        <section>
+            <h3>Montant total payé : {{ totalPrice|number_format(2, ',', ' ') }} €</h3>  
+
+            {% if orders|length == 0 %}
+                <div class="alert alert-warning" role="alert">
+                    Aucun achat trouvé.
+                </div>
+            {% else %}
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Commande ID</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Nom d'utilisateur</th>
+                                <th scope="col">Prénom</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Quantité Totale</th>
+                                <th scope="col">Type de Billet</th>
+                                <th scope="col">Statut du Paiement</th>
+                                <th scope="col">QR Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                {% set itemCounts = {} %}
+                                
+                                {% for item in order.getOrderItems() %}
+                                    {% set type = item.billet.type %}
+                                    {% set itemCounts = itemCounts|merge({ (type): (itemCounts[type] is defined ? itemCounts[type] + item.quantite : item.quantite) }) %}
+                                {% endfor %}
+
+                                <tr>
+                                    <td>{{ order.id }}</td>
+                                    <td>{{ order.orderDate|date('d/m/Y') }}</td>
+                                    <td>{{ order.user.username }}</td>
+                                    <td>{{ order.user.firstName }}</td>
+                                    <td>{{ order.user.email }}</td>
+                                    <td>
+                                        {% set totalQuantity = 0 %}
+                                    {% for quantity in itemCounts %}
+                                    {% set totalQuantity = totalQuantity + quantity %}
+                                    {% endfor %}
+                                    {{ totalQuantity }}
+
+                                    </td>
+                                    <td>
+                                        {% for type, quantity in itemCounts %}
+                                            {{ quantity }} {{ type }}{% if not loop.last %}, {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td class="text-center"> 
+                                        <div class="d-flex justify-content-center">
+                                            {% if order.isPaid %}
+                                                <button class="btn btn-success">Payé</button>
+                                            {% else %}
+                                                <button class="btn btn-danger">À Payer</button>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                       <td class="text-center">
+                                        {% set qrCodePath = '/assets/qr_codes/' ~ order.orderKey ~ '.png' %}
+                                        {% if qrCodePath is not empty %}
+                                            <div>
+                                                <a href="{{ asset(qrCodePath) }}" target="_blank">
+                                                    <img src="{{ asset(qrCodePath) }}" alt="QR Code de la commande {{ order.id }}" style="width: 50px; height: 50px;">
+                                                </a>
+                                                <div>
+                                                    <a href="{{ asset(qrCodePath) }}" download class="btn btn-primary btn-sm mt-1">Télécharger</a>
+                                                </div>
+                                            </div>
+                                        {% else %}
+                                            <span class="text-muted">QR Code non disponible</span>
+                                        {% endif %}
+                                    </td> 
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+        </section>
+    </article>
+</main>
+
+{% include "home/_footer.html.twig" %}
+
+{% endblock %}

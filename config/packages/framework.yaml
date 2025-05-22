@@ -1,0 +1,35 @@
+framework:
+    # Clé secrète pour les sessions et CSRF
+    secret: '%env(APP_SECRET)%'
+    
+    # Activation de la protection CSRF
+    csrf_protection: true
+
+    # Configuration de la session
+    session:
+        # Utilisation du gestionnaire de session par défaut
+        handler_id: null
+        cookie_secure: auto      # Définit si le cookie de session doit être sécurisé
+        cookie_samesite: lax     # Définit la politique SameSite pour les cookies
+        # Autres options spécifiques à la session peuvent être ajoutées ici
+
+    # Activation du surchargement des méthodes HTTP
+    http_method_override: true
+
+    # Gestion des erreurs PHP
+    handle_all_throwables: false
+    php_errors:
+        log: true
+
+    # Activation des Edge Side Includes (ESI)
+    esi: true
+
+# Configuration pour l'environnement de test (optionnel)
+when@test:
+    framework:
+        test: true
+        session:
+            # Utilisation d'une session fictive pour les tests
+            storage_factory_id: session.storage.factory.mock_file
+            # Tu peux aussi utiliser le stockage natif : 
+            # storage_factory_id: session.storage.factory.native

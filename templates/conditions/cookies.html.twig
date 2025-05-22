@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de Cookies{% endblock %}
+
+{% block body %}
+
+{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px; 
+    }
+
+    .cookie-policy-section {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .cookie-policy-section h3 {
+        margin-top: 20px;
+        color: #007bff;
+    }
+
+    .cookie-policy-section ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .cookie-policy-section p, .cookie-policy-section li {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container custom-space">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h1>Politique de Cookies</h1>
+        </div>
+        <div class="card-body cookie-policy-section">
+            <p>
+                Cette politique de cookies explique ce que sont les cookies, comment nous les utilisons, les types de cookies que nous utilisons, 
+                les informations que nous collectons en utilisant les cookies et comment ces informations sont utilisées. 
+                Vous pouvez également découvrir comment contrôler vos préférences en matière de cookies.
+            </p>
+
+            <h3>Que sont les cookies ?</h3>
+            <p>
+                Les cookies sont de petits fichiers texte qui sont stockés sur votre appareil (ordinateur, tablette, ou smartphone) 
+                lorsque vous visitez un site web. Ils permettent au site de reconnaître votre appareil et de se souvenir de vos préférences 
+                ou actions passées.
+            </p>
+
+            <h3>Comment utilisons-nous les cookies ?</h3>
+            <p>
+                Nous utilisons les cookies pour améliorer votre expérience utilisateur sur notre site, analyser le trafic et 
+                comprendre comment les utilisateurs interagissent avec notre contenu. Certains cookies sont essentiels pour le bon fonctionnement 
+                de notre site, tandis que d'autres sont utilisés à des fins analytiques ou publicitaires.
+            </p>
+
+            <h3>Types de cookies que nous utilisons</h3>
+            <ul>
+                <li><strong>Cookies essentiels :</strong> Ces cookies sont nécessaires pour permettre le fonctionnement de notre site web.</li>
+                <li><strong>Cookies de performance :</strong> Ces cookies collectent des informations sur la manière dont les utilisateurs interagissent avec notre site.</li>
+                <li><strong>Cookies fonctionnels :</strong> Ces cookies permettent à notre site de se souvenir de vos choix (par exemple, votre langue ou votre région).</li>
+                <li><strong>Cookies publicitaires :</strong> Ces cookies sont utilisés pour afficher des publicités pertinentes pour vous.</li>
+            </ul>
+
+            <h3>Comment gérer vos préférences en matière de cookies ?</h3>
+            <p>
+                Vous pouvez modifier vos préférences de cookies à tout moment via les paramètres de votre navigateur ou notre bannière de gestion des cookies. 
+                Notez que la désactivation de certains cookies peut affecter votre expérience utilisateur sur notre site.
+            </p>
+
+            <h3>Contact</h3>
+            <p>
+                Si vous avez des questions concernant notre politique de cookies, vous pouvez nous contacter à l'adresse suivante : 
+                <a href="mailto:contact@tickets.paris2024">contact@tickets.paris2024</a>.
+            </p>
+                   <!-- Bouton de retour -->
+        <div class="btn-retour">
+            <a href="{{ path('app_home') }}" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+    </div>
+    
+        </div>
+    </div>
+</div>
+
+{% include "home/_footer.html.twig" %}
+{% endblock %}

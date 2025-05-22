@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande réussie{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Commande réussie</h2>
+        <p class="text-center">Votre commande a été enregistrée avec succès. Vous pouvez maintenant procéder au paiement.</p>
+
+        <div class="text-center">
+          <a href="{{ path('app_home') }}" class="btn btn-secondary">Retour à l'accueil</a>
+        </div>
+    </div>
+
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

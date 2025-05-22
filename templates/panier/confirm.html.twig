@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation du Panier{% endblock %}
+
+{% block body %}
+    <h1>Confirmation de votre commande</h1>
+
+    <h2>Résumé du panier</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Type de Billet</th>
+                <th>Quantité</th>
+                <th>Montant</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in panier %}
+                <tr>
+                    <td>{{ item.billet.displayType }}</td> 
+                    <td>{{ item.quantite }}</td>
+                    <td>{{ item.montant }} €</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Total : {{ montantTotal }} €</p>
+
+    <form action="{{ path('panier_confirm') }}" method="post">
+        <button type="submit" class="btn btn-primary">Confirmer le paiement</button>
+    </form>
+{% endblock %}

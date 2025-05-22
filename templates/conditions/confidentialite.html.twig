@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de Confidentialité{% endblock %}
+
+{% block body %}
+{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px;
+    }
+    .privacy-section {
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="container custom-space">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h1>Politique de Confidentialité</h1>
+        </div>
+        <div class="card-body">
+            <p>
+                Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre site de billetterie pour les Jeux Olympiques et Paralympiques de Paris 2024.
+            </p>
+
+            <div class="privacy-section">
+                <h3>1. Informations que nous collectons</h3>
+                <p>
+                    Nous collectons les informations suivantes lorsque vous utilisez notre site :
+                </p>
+                <ul>
+                    <li><strong>Informations personnelles :</strong> nom, prénom, adresse email, numéro de téléphone, adresse postale.</li>
+                    <li><strong>Informations de paiement :</strong> données de votre carte bancaire, uniquement via des plateformes sécurisées.</li>
+                    <li><strong>Informations techniques :</strong> adresse IP, type de navigateur, système d'exploitation, et données de navigation.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>2. Utilisation de vos informations</h3>
+                <p>
+                    Les informations collectées sont utilisées pour :
+                </p>
+                <ul>
+                    <li>Traiter vos commandes et vous fournir les billets réservés.</li>
+                    <li>Vous contacter concernant votre réservation ou en cas de modification d'événements.</li>
+                    <li>Améliorer votre expérience utilisateur sur notre site.</li>
+                    <li>Envoyer des communications promotionnelles, si vous y avez consenti.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>3. Partage de vos informations</h3>
+                <p>
+                    Nous ne vendons ni ne louons vos informations personnelles à des tiers. Toutefois, nous pouvons partager vos données avec :
+                </p>
+                <ul>
+                    <li>Nos prestataires de paiement pour sécuriser les transactions.</li>
+                    <li>Les autorités compétentes, si la loi l'exige.</li>
+                    <li>Nos partenaires officiels pour vous offrir des services supplémentaires liés aux Jeux Olympiques.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>4. Cookies et technologies similaires</h3>
+                <p>
+                    Nous utilisons des cookies pour analyser le trafic sur notre site, personnaliser votre expérience et améliorer nos services. Pour plus de détails, consultez notre page <a href="{{ path('parametres_cookies') }}">Politique de Cookies</a>.
+                </p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>5. Protection de vos données</h3>
+                <p>
+                    Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, perte ou divulgation. Vos informations sensibles sont cryptées et stockées dans des environnements sécurisés.
+                </p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>6. Vos droits</h3>
+                <p>
+                    Conformément au RGPD, vous avez le droit de :
+                </p>
+                <ul>
+                    <li>Accéder à vos données personnelles.</li>
+                    <li>Demander la rectification ou la suppression de vos données.</li>
+                    <li>Vous opposer au traitement de vos données ou retirer votre consentement.</li>
+                    <li>Déposer une plainte auprès d'une autorité compétente en matière de protection des données.</li>
+                </ul>
+                <p>
+                    Pour exercer vos droits, contactez-nous à l'adresse suivante : <a href="mailto:privacy@tickets.paris2024.com">privacy@tickets.paris2024.com</a>.
+                </p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>7. Modifications de cette politique</h3>
+                <p>
+                    Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les mises à jour seront publiées sur cette page avec la date de révision.
+                </p>
+            </div>
+
+            <p class="text-muted text-center mt-4">Dernière mise à jour : 8 décembre 2024</p>
+              <!-- Bouton de retour -->
+        <div class="btn-retour">
+            <a href="{{ path('app_home') }}" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+{% include "home/_footer.html.twig" %}
+{% endblock %}

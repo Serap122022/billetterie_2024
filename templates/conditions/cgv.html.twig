@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions Générales de Vente{% endblock %}
+
+{% block body %}
+
+	{% include 'home/_navbar.html.twig' %}
+
+<div class="container mt-5 mb-5"><style>
+    .custom-space {
+        margin-top: 80px; 
+    }
+</style>
+
+<div class="container custom-space">    
+<h1 class="mb-4 mt-5">Conditions Générales de Vente</h1>
+    <p>Les présentes Conditions Générales de Vente (CGV), ainsi que les autres documents mentionnés aux présentes, s'appliquent à votre utilisation des services de vente de billets pour les Jeux Olympiques 2024. Dans ce contexte, le terme "Services" désigne tous les services numériques, tels que notre site Web, applications mobiles, bulletins d’information, systèmes d’inscription, et autres ressources commerciales gérés par l'organisateur des Jeux Olympiques 2024.</p>
+
+    <h2 class="mt-4">1. Acceptation des Conditions</h2>
+    <p>En passant une commande, vous acceptez sans réserve les présentes Conditions Générales de Vente. Si vous n'acceptez pas ces conditions, merci de ne pas utiliser nos Services.</p>
+
+    <h2 class="mt-4">2. Commande de Billets</h2>
+    <p>Les commandes de billets peuvent être effectuées en ligne sur notre site. Vous devez fournir des informations exactes et complètes lors de votre commande. Les billets sont réservés uniquement pour un usage personnel et ne peuvent pas être revendus.</p>
+
+    <h2 class="mt-4">3. Prix</h2>
+    <p>Les prix des billets sont indiqués en euros et incluent toutes les taxes applicables. Des frais de traitement peuvent s'appliquer. Les prix peuvent être modifiés à tout moment, mais les modifications n'affecteront pas les commandes déjà confirmées.</p>
+
+    <h2 class="mt-4">4. Paiement</h2>
+    <p>Le paiement doit être effectué au moment de la commande par carte de crédit ou tout autre moyen de paiement accepté. Vous garantissez que vous êtes autorisé à utiliser le moyen de paiement choisi.</p>
+
+    <h2 class="mt-4">5. Annulation et Remboursement</h2>
+    <p>Les billets achetés ne sont pas remboursables, sauf en cas d'annulation de l'événement. En cas de modification ou d'annulation de l'événement, nous vous informerons des options disponibles.</p>
+
+    <h2 class="mt-4">6. Responsabilité</h2>
+    <p>Nous ne sommes pas responsables des pertes ou dommages résultant de l'utilisation de notre site ou de l'achat de billets, sauf en cas de négligence grave de notre part. Nous ne garantissons pas que le site sera disponible à tout moment ou sans interruption.</p>
+
+    <h2 class="mt-4">7. Modifications des Conditions</h2>
+    <p>Nous nous réservons le droit de modifier ces Conditions à tout moment. Les modifications seront publiées sur notre site et prendront effet dès leur publication. Nous vous encourageons à consulter régulièrement cette page pour prendre connaissance des éventuelles modifications.</p>
+
+    <h2 class="mt-4">8. Droit Applicable</h2>
+    <p>Les présentes Conditions Générales de Vente sont régies par le droit français. Tout litige découlant de l'exécution ou de l'interprétation des présentes Conditions sera soumis à la compétence exclusive des tribunaux compétents.</p>
+
+    <h2 class="mt-4">9. Contact</h2>
+    <p>Pour toute question concernant ces Conditions Générales de Vente, veuillez nous contacter à l'adresse suivante : [adresse email de contact].</p>
+
+    <p class="mt-4">Dernière mise à jour des présentes Conditions Générales de Vente datée du [date de mise à jour].</p>
+   <!-- Bouton de retour -->
+        <div class="btn-retour">
+            <a href="{{ path('app_home') }}" class="btn btn-primary">Retour à la page d'accueil</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cybersécurité{% endblock %}
+
+{% block body %}
+
+{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px; 
+    }
+
+</style>
+
+<div class="container custom-space">
+    <h1 class="text-center mb-4">Cybersécurité</h1>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="card-title">J’ai un problème</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">J’ai oublié le mot de passe de l’un de mes comptes Paris 2024</h5>
+            <p>L’accès à votre compte s’effectue avec les identifiants (e-mail et mot de passe) que vous avez entrés lors de votre inscription sur l’un des sites.</p>
+            <p>En cas d’oubli de mot de passe, veuillez suivre les étapes suivantes pour récupérer l’accès à votre compte :</p>
+            <ol>
+                <li>Sur la page de connexion, cliquez sur le lien <strong>J’ai oublié mon mot de passe</strong>.</li>
+                <li>Saisissez l’adresse e-mail que vous avez utilisée pour vous inscrire à Paris 2024 et nous vous enverrons un lien de réinitialisation.</li>
+                <li>Lors de la création de votre nouveau mot de passe, nous vous recommandons de suivre les bonnes pratiques pour construire un mot de passe robuste : <a href="#">En savoir plus</a>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="card-title">Je me suis fait pirater l’un de mes comptes Paris 2024</h4>
+        </div>
+        <div class="card-body">
+            <p>Si vous constatez une activité inhabituelle sur votre compte ou si vous pensez que votre compte a été piraté, nous vous invitons à suivre les étapes suivantes pour récupérer l’accès à votre compte et renforcer sa sécurité :</p>
+            <ol>
+                <li>Modifiez immédiatement votre mot de passe Paris 2024 et renforcez la sécurité du mot de passe :</li>
+                <ul>
+                    <li>Sur la page de connexion, cliquez sur le lien <strong>J’ai oublié mon mot de passe</strong>.</li>
+                    <li>Saisissez l’adresse e-mail que vous avez utilisée pour vous inscrire à Paris 2024 et nous vous enverrons un lien de réinitialisation.</li>
+                    <li>Lors de la création de votre nouveau mot de passe, nous vous recommandons de suivre les bonnes pratiques pour construire un mot de passe robuste : <a href="#">En savoir plus</a>.</li>
+                </ul>
+                <li>Modifiez immédiatement votre mot de passe pour les applications et les sites sur lesquels vous utilisez le même mot de passe que pour Paris 2024.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="card-title">J’ai été ciblé par une tentative d’arnaque</h4>
+        </div>
+        <div class="card-body">
+            <p>Les contacts avec Paris 2024 seront toujours effectués à votre initiative. En cas de réception d’un e-mail, d’un SMS ou d’un appel téléphonique de la part de Paris 2024, nous vous rappelons qu’aucun mot de passe ou donnée bancaire ne vous sera demandé.</p>
+            <p>Si vous avez été ciblé par une tentative d’arnaque, signalez l’incident :</p>
+            <ul>
+                <li>Signalez l’incident auprès des autorités, collectez les preuves, messages et informations dont vous disposez et signalez les faits sur la plateforme dédiée du ministère de l’Intérieur : <a href="https://internet-signalement.gouv.fr" target="_blank">internet-signalement.gouv.fr</a>.</li>
+                <li>Si vous avez été victime d’une arnaque :</li>
+                <ul>
+                    <li>Conservez toutes les preuves, messages et informations dont vous disposez (identité, numéro de téléphone, adresse, contact mail, numéro de transaction, informations bancaires, documents transmis, site Internet consulté, etc.).</li>
+                    <li>Déposez plainte auprès des autorités locales. Pour les infractions de type arnaque commerciale, il vous est possible de déposer plainte en ligne sur la plateforme <a href="https://www.service-public.fr" target="_blank">THESEE</a> accessible sur le site Service-public.fr.</li>
+                    <li>Faites opposition auprès de votre banque dès que possible. Si un paiement est déjà débité sur votre compte, demandez le remboursement en indiquant que vous déposez plainte.</li>
+                </ul>
+                <li>Si vous nécessitez une assistance, nous vous invitons à consulter le site <a href="https://cybermalveillance.gouv.fr" target="_blank">cybermalveillance.gouv.fr</a>.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="card-title">J’ai un doute concernant le site sur lequel j’ai acheté mon billet</h4>
+        </div>
+        <div class="card-body">
+            <p>Il existe un seul site officiel pour acheter ses billets pour les Jeux de Paris 2024 : <a href="https://tickets.paris2024.org" target="_blank">tickets.paris2024.org</a>.</p>
+            <p>Aucun site web autre que celui-ci n’a le droit de vendre des billets pour les Jeux Olympiques et Paralympiques de Paris 2024.</p>
+            <p>Les bonnes pratiques :</p>
+            <ul>
+                <li>Construire un mot de passe robuste : <a href="#">En savoir plus</a></li>
+                <li>Identifier une tentative de phishing : <a href="#">En savoir plus</a></li>
+                <li>Déjouer les tentatives d’arnaque : <a href="#">En savoir plus</a></li>
+                <li>Mettre à jour mes équipements : <a href="#">En savoir plus</a></li>
+            </ul>
+                   <!-- Bouton de retour -->
+        <div class="btn-retour">
+            <a href="{{ path('app_home') }}" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+{% include "home/_footer.html.twig" %}
+{% endblock %}

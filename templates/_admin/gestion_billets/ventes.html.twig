@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ventes de Billets{% endblock %}
+
+{% block body %}
+{% include '_admin/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px;
+    }
+</style>
+
+<div class="container custom-space">
+    <h1 class="text-center mb-4">Total des Billets Vendus</h1>
+
+    <form method="POST" action="{{ path('ventes') }}" class="mt-4">
+        <table class="table table-bordered table-striped table-responsive text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Stock Initial</th>
+                    <th>Vendus</th>
+                    <th>Reste</th>
+                    <th>Prix Total Récupéré</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for billet in billets %}
+                    {% set type = billet.type %}
+                    {% set quantiteVendue = salesData[type].quantiteVendue %}
+                    {% set reste = billet.stock - quantiteVendue %} <!-- Calcul du reste -->
+                    <tr>
+                        <td>{{ billet.id }}</td>
+                        <td>{{ type }}</td> 
+                         <td>{{ billet.stock|number_format(0, ',', ' ') }}</td>
+                        <td>{{ quantiteVendue|number_format(0, ',', ' ') }}</td>
+                        <td>{{ reste|number_format(0, ',', ' ') }}</td>
+                        <td>{{ salesData[type].montantTotal|number_format(2, ',', ' ') }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+{% include '_admin/_footer.html.twig' %}
+
+{% endblock %}

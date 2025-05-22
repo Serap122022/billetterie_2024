@@ -1,0 +1,55 @@
+{% block header %}
+    <!-- Navbar Start -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow fixed-top p-0 m-0">
+            <!-- Logos -->
+            <a href="#" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                <img src="/assets/img/logosJO/Logo_JO.svg.png" style="width: 100px; height: auto;" class="me-2" alt="Logo JO">
+                <img src="/assets/img/logosJO/Logo_PO.svg.png" style="width: 100px; height: auto;" class="ms-2" alt="Logo PO">
+            </a>
+
+    <!-- Bouton pour mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav d-flex align-items-center w-100 text-center">
+                    
+                    {# <!-- Accueil -->
+                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav d-flex align-items-center">
+                        <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('app_home') }}">
+                            Accueil <i class="fa fa-home ms-2"></i>
+                        </a>
+                    </li> #}
+
+
+                    {# <!-- Gestion -->
+                    <li class="nav-item">
+                        <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('scan_qr') }}">
+                            Scan QR <i class="fa fa-cogs ms-2"></i>
+                        </a>
+                    </li> #}
+
+                    <!-- Connexion & Déconnexion -->
+                    {% if is_granted('ROLE_EMPLOYES') %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3 me-5" href="{{ path('app_logout') }}">
+                                Déconnexion <i class="fa fa-sign-out-alt ms-2"></i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3 me-4" href="{{ path('app_login') }}">
+                                Connexion <i class="fa fa-arrow-right ms-2"></i>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+{% endblock %}

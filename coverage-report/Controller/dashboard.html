@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\xampp\htdocs\billetterie_2024\src\Controller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css?v=9.2.32" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css?v=9.2.32" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css?v=9.2.32" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">C:\xampp\htdocs\billetterie_2024\src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Controller</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AdminController.php.html#17">App\Controller\AdminController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#14">App\Controller\BilletsController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsPublicController.php.html#11">App\Controller\BilletsPublicController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#9">App\Controller\ConditionsController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EmailController.php.html#11">App\Controller\EmailController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EmployesController.php.html#18">App\Controller\EmployesController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EvenementsController.php.html#13">App\Controller\EvenementsController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#10">App\Controller\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MailController.php.html#21">App\Controller\MailController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersController.php.html#19">App\Controller\OrdersController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#20">App\Controller\PanierController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#31">App\Controller\PaymentController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RegisterController.php.html#16">App\Controller\RegisterController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ScanController.php.html#12">App\Controller\ScanController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#16">App\Controller\SecurityController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserController.php.html#13">App\Controller\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="VentesController.php.html#15">App\Controller\VentesController</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="PanierController.php.html#20">App\Controller\PanierController</a></td><td class="text-right">1260</td></tr>
+       <tr><td><a href="PaymentController.php.html#31">App\Controller\PaymentController</a></td><td class="text-right">992</td></tr>
+       <tr><td><a href="BilletsController.php.html#14">App\Controller\BilletsController</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="SecurityController.php.html#16">App\Controller\SecurityController</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="OrdersController.php.html#19">App\Controller\OrdersController</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="AdminController.php.html#17">App\Controller\AdminController</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="MailController.php.html#21">App\Controller\MailController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="VentesController.php.html#15">App\Controller\VentesController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="UserController.php.html#13">App\Controller\UserController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="RegisterController.php.html#16">App\Controller\RegisterController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="ScanController.php.html#12">App\Controller\ScanController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="EmployesController.php.html#18">App\Controller\EmployesController</a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="AdminController.php.html#19"><abbr title="App\Controller\AdminController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#26"><abbr title="App\Controller\AdminController::employesIndex">employesIndex</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#37"><abbr title="App\Controller\AdminController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#69"><abbr title="App\Controller\AdminController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#97"><abbr title="App\Controller\AdminController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="AdminController.php.html#111"><abbr title="App\Controller\AdminController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#20"><abbr title="App\Controller\BilletsController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#27"><abbr title="App\Controller\BilletsController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#41"><abbr title="App\Controller\BilletsController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#74"><abbr title="App\Controller\BilletsController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#88"><abbr title="App\Controller\BilletsController::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#132"><abbr title="App\Controller\BilletsController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsController.php.html#161"><abbr title="App\Controller\BilletsController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="BilletsPublicController.php.html#13"><abbr title="App\Controller\BilletsPublicController::publicIndex">publicIndex</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#11"><abbr title="App\Controller\ConditionsController::conditionsGeneralesVente">conditionsGeneralesVente</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#17"><abbr title="App\Controller\ConditionsController::conditionsGeneralesUtilisation">conditionsGeneralesUtilisation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#23"><abbr title="App\Controller\ConditionsController::mentionsLegales">mentionsLegales</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#29"><abbr title="App\Controller\ConditionsController::politiqueConfidentialite">politiqueConfidentialite</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#35"><abbr title="App\Controller\ConditionsController::parametresCookies">parametresCookies</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#41"><abbr title="App\Controller\ConditionsController::parametresCookiesBilletterie">parametresCookiesBilletterie</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#47"><abbr title="App\Controller\ConditionsController::cyberscurite">cyberscurite</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ConditionsController.php.html#53"><abbr title="App\Controller\ConditionsController::centreAide">centreAide</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EmailController.php.html#13"><abbr title="App\Controller\EmailController::sendEmail">sendEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EmployesController.php.html#22"><abbr title="App\Controller\EmployesController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EvenementsController.php.html#15"><abbr title="App\Controller\EvenementsController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="EvenementsController.php.html#30"><abbr title="App\Controller\EvenementsController::participants">participants</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="HomeController.php.html#12"><abbr title="App\Controller\HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MailController.php.html#23"><abbr title="App\Controller\MailController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="MailController.php.html#79"><abbr title="App\Controller\MailController::resetPassword">resetPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersController.php.html#23"><abbr title="App\Controller\OrdersController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersController.php.html#235"><abbr title="App\Controller\OrdersController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#25"><abbr title="App\Controller\PanierController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#31"><abbr title="App\Controller\PanierController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#563"><abbr title="App\Controller\PanierController::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#623"><abbr title="App\Controller\PanierController::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#665"><abbr title="App\Controller\PanierController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#691"><abbr title="App\Controller\PanierController::clear">clear</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PanierController.php.html#709"><abbr title="App\Controller\PanierController::passerAuPaiement">passerAuPaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#36"><abbr title="App\Controller\PaymentController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#42"><abbr title="App\Controller\PaymentController::payment">payment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#368"><abbr title="App\Controller\PaymentController::processPayment">processPayment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#552"><abbr title="App\Controller\PaymentController::paymentSuccessId">paymentSuccessId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#637"><abbr title="App\Controller\PaymentController::validateTicket">validateTicket</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#769"><abbr title="App\Controller\PaymentController::paymentSuccess">paymentSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#789"><abbr title="App\Controller\PaymentController::paymentCancel">paymentCancel</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="PaymentController.php.html#795"><abbr title="App\Controller\PaymentController::paymentHistory">paymentHistory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RegisterController.php.html#91"><abbr title="App\Controller\RegisterController::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RegisterController.php.html#132"><abbr title="App\Controller\RegisterController::termsConditions">termsConditions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ScanController.php.html#14"><abbr title="App\Controller\ScanController::scanPage">scanPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ScanController.php.html#63"><abbr title="App\Controller\ScanController::errorPage">errorPage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#18"><abbr title="App\Controller\SecurityController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#23"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#65"><abbr title="App\Controller\SecurityController::redirectAfterLogin">redirectAfterLogin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#151"><abbr title="App\Controller\SecurityController::accessDenied">accessDenied</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#157"><abbr title="App\Controller\SecurityController::loginCheck">loginCheck</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="SecurityController.php.html#167"><abbr title="App\Controller\SecurityController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserController.php.html#17"><abbr title="App\Controller\UserController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserController.php.html#22"><abbr title="App\Controller\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserController.php.html#45"><abbr title="App\Controller\UserController::toggleUser">toggleUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserController.php.html#59"><abbr title="App\Controller\UserController::deleteUser">deleteUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="VentesController.php.html#20"><abbr title="App\Controller\VentesController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="VentesController.php.html#25"><abbr title="App\Controller\VentesController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="PanierController.php.html#31"><abbr title="App\Controller\PanierController::index">index</abbr></a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="OrdersController.php.html#235"><abbr title="App\Controller\OrdersController::create">create</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="PaymentController.php.html#368"><abbr title="App\Controller\PaymentController::processPayment">processPayment</abbr></a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="SecurityController.php.html#65"><abbr title="App\Controller\SecurityController::redirectAfterLogin">redirectAfterLogin</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="VentesController.php.html#25"><abbr title="App\Controller\VentesController::index">index</abbr></a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="MailController.php.html#79"><abbr title="App\Controller\MailController::resetPassword">resetPassword</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="BilletsController.php.html#88"><abbr title="App\Controller\BilletsController::add">add</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="PanierController.php.html#623"><abbr title="App\Controller\PanierController::remove">remove</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="PaymentController.php.html#552"><abbr title="App\Controller\PaymentController::paymentSuccessId">paymentSuccessId</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="RegisterController.php.html#91"><abbr title="App\Controller\RegisterController::register">register</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="ScanController.php.html#14"><abbr title="App\Controller\ScanController::scanPage">scanPage</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="SecurityController.php.html#23"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="BilletsController.php.html#41"><abbr title="App\Controller\BilletsController::new">new</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="BilletsController.php.html#132"><abbr title="App\Controller\BilletsController::edit">edit</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="PanierController.php.html#563"><abbr title="App\Controller\PanierController::add">add</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="AdminController.php.html#37"><abbr title="App\Controller\AdminController::new">new</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="AdminController.php.html#69"><abbr title="App\Controller\AdminController::edit">edit</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="MailController.php.html#23"><abbr title="App\Controller\MailController::forgotPassword">forgotPassword</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="PanierController.php.html#665"><abbr title="App\Controller\PanierController::delete">delete</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="BilletsController.php.html#161"><abbr title="App\Controller\BilletsController::delete">delete</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PanierController.php.html#691"><abbr title="App\Controller\PanierController::clear">clear</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PaymentController.php.html#637"><abbr title="App\Controller\PaymentController::validateTicket">validateTicket</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="PaymentController.php.html#795"><abbr title="App\Controller\PaymentController::paymentHistory">paymentHistory</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="UserController.php.html#22"><abbr title="App\Controller\UserController::index">index</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="AdminController.php.html#111"><abbr title="App\Controller\AdminController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="BilletsController.php.html#74"><abbr title="App\Controller\BilletsController::show">show</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="EmployesController.php.html#22"><abbr title="App\Controller\EmployesController::index">index</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="PaymentController.php.html#42"><abbr title="App\Controller\PaymentController::payment">payment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="PaymentController.php.html#769"><abbr title="App\Controller\PaymentController::paymentSuccess">paymentSuccess</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="UserController.php.html#45"><abbr title="App\Controller\UserController::toggleUser">toggleUser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="UserController.php.html#59"><abbr title="App\Controller\UserController::deleteUser">deleteUser</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.32</a> using <a href="https://secure.php.net/" target="_top">PHP 8.2.12</a> and <a href="https://phpunit.de/">PHPUnit 9.6.22</a> at Tue May 13 14:29:53 CEST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js?v=9.2.32" type="text/javascript"></script>
+  <script src="../_js/d3.min.js?v=9.2.32" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js?v=9.2.32" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([17,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([62,0,0,0,0,0,0,0,0,0,0,1], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"AccessDeniedController.php.html#9\">App\\Controller\\AccessDeniedController<\/a>"],[0,13,"<a href=\"AdminController.php.html#17\">App\\Controller\\AdminController<\/a>"],[0,23,"<a href=\"BilletsController.php.html#14\">App\\Controller\\BilletsController<\/a>"],[0,1,"<a href=\"BilletsPublicController.php.html#11\">App\\Controller\\BilletsPublicController<\/a>"],[0,8,"<a href=\"ConditionsController.php.html#9\">App\\Controller\\ConditionsController<\/a>"],[0,1,"<a href=\"EmailController.php.html#11\">App\\Controller\\EmailController<\/a>"],[0,2,"<a href=\"EmployesController.php.html#18\">App\\Controller\\EmployesController<\/a>"],[0,2,"<a href=\"EvenementsController.php.html#13\">App\\Controller\\EvenementsController<\/a>"],[0,1,"<a href=\"HomeController.php.html#10\">App\\Controller\\HomeController<\/a>"],[0,11,"<a href=\"MailController.php.html#21\">App\\Controller\\MailController<\/a>"],[0,14,"<a href=\"OrdersController.php.html#19\">App\\Controller\\OrdersController<\/a>"],[0,35,"<a href=\"PanierController.php.html#20\">App\\Controller\\PanierController<\/a>"],[0,31,"<a href=\"PaymentController.php.html#31\">App\\Controller\\PaymentController<\/a>"],[0,7,"<a href=\"RegisterController.php.html#16\">App\\Controller\\RegisterController<\/a>"],[0,7,"<a href=\"ScanController.php.html#12\">App\\Controller\\ScanController<\/a>"],[0,20,"<a href=\"SecurityController.php.html#16\">App\\Controller\\SecurityController<\/a>"],[0,8,"<a href=\"UserController.php.html#13\">App\\Controller\\UserController<\/a>"],[0,11,"<a href=\"VentesController.php.html#15\">App\\Controller\\VentesController<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"AccessDeniedController.php.html#11\">App\\Controller\\AccessDeniedController::showAccessDeniedPage<\/a>"],[0,1,"<a href=\"AdminController.php.html#19\">App\\Controller\\AdminController::index<\/a>"],[0,1,"<a href=\"AdminController.php.html#26\">App\\Controller\\AdminController::employesIndex<\/a>"],[0,4,"<a href=\"AdminController.php.html#37\">App\\Controller\\AdminController::new<\/a>"],[0,4,"<a href=\"AdminController.php.html#69\">App\\Controller\\AdminController::edit<\/a>"],[0,1,"<a href=\"AdminController.php.html#97\">App\\Controller\\AdminController::show<\/a>"],[0,2,"<a href=\"AdminController.php.html#111\">App\\Controller\\AdminController::delete<\/a>"],[0,1,"<a href=\"BilletsController.php.html#20\">App\\Controller\\BilletsController::__construct<\/a>"],[0,1,"<a href=\"BilletsController.php.html#27\">App\\Controller\\BilletsController::index<\/a>"],[0,5,"<a href=\"BilletsController.php.html#41\">App\\Controller\\BilletsController::new<\/a>"],[0,2,"<a href=\"BilletsController.php.html#74\">App\\Controller\\BilletsController::show<\/a>"],[0,6,"<a href=\"BilletsController.php.html#88\">App\\Controller\\BilletsController::add<\/a>"],[0,5,"<a href=\"BilletsController.php.html#132\">App\\Controller\\BilletsController::edit<\/a>"],[0,3,"<a href=\"BilletsController.php.html#161\">App\\Controller\\BilletsController::delete<\/a>"],[0,1,"<a href=\"BilletsPublicController.php.html#13\">App\\Controller\\BilletsPublicController::publicIndex<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#11\">App\\Controller\\ConditionsController::conditionsGeneralesVente<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#17\">App\\Controller\\ConditionsController::conditionsGeneralesUtilisation<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#23\">App\\Controller\\ConditionsController::mentionsLegales<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#29\">App\\Controller\\ConditionsController::politiqueConfidentialite<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#35\">App\\Controller\\ConditionsController::parametresCookies<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#41\">App\\Controller\\ConditionsController::parametresCookiesBilletterie<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#47\">App\\Controller\\ConditionsController::cyberscurite<\/a>"],[0,1,"<a href=\"ConditionsController.php.html#53\">App\\Controller\\ConditionsController::centreAide<\/a>"],[0,1,"<a href=\"EmailController.php.html#13\">App\\Controller\\EmailController::sendEmail<\/a>"],[0,2,"<a href=\"EmployesController.php.html#22\">App\\Controller\\EmployesController::index<\/a>"],[0,1,"<a href=\"EvenementsController.php.html#15\">App\\Controller\\EvenementsController::index<\/a>"],[0,1,"<a href=\"EvenementsController.php.html#30\">App\\Controller\\EvenementsController::participants<\/a>"],[0,1,"<a href=\"HomeController.php.html#12\">App\\Controller\\HomeController::index<\/a>"],[0,4,"<a href=\"MailController.php.html#23\">App\\Controller\\MailController::forgotPassword<\/a>"],[0,7,"<a href=\"MailController.php.html#79\">App\\Controller\\MailController::resetPassword<\/a>"],[0,1,"<a href=\"OrdersController.php.html#23\">App\\Controller\\OrdersController::__construct<\/a>"],[0,13,"<a href=\"OrdersController.php.html#235\">App\\Controller\\OrdersController::create<\/a>"],[0,1,"<a href=\"PanierController.php.html#25\">App\\Controller\\PanierController::__construct<\/a>"],[0,15,"<a href=\"PanierController.php.html#31\">App\\Controller\\PanierController::index<\/a>"],[0,5,"<a href=\"PanierController.php.html#563\">App\\Controller\\PanierController::add<\/a>"],[0,6,"<a href=\"PanierController.php.html#623\">App\\Controller\\PanierController::remove<\/a>"],[0,4,"<a href=\"PanierController.php.html#665\">App\\Controller\\PanierController::delete<\/a>"],[0,3,"<a href=\"PanierController.php.html#691\">App\\Controller\\PanierController::clear<\/a>"],[0,1,"<a href=\"PanierController.php.html#709\">App\\Controller\\PanierController::passerAuPaiement<\/a>"],[0,1,"<a href=\"PaymentController.php.html#36\">App\\Controller\\PaymentController::__construct<\/a>"],[0,2,"<a href=\"PaymentController.php.html#42\">App\\Controller\\PaymentController::payment<\/a>"],[0,13,"<a href=\"PaymentController.php.html#368\">App\\Controller\\PaymentController::processPayment<\/a>"],[0,6,"<a href=\"PaymentController.php.html#552\">App\\Controller\\PaymentController::paymentSuccessId<\/a>"],[0,3,"<a href=\"PaymentController.php.html#637\">App\\Controller\\PaymentController::validateTicket<\/a>"],[0,2,"<a href=\"PaymentController.php.html#769\">App\\Controller\\PaymentController::paymentSuccess<\/a>"],[0,1,"<a href=\"PaymentController.php.html#789\">App\\Controller\\PaymentController::paymentCancel<\/a>"],[0,3,"<a href=\"PaymentController.php.html#795\">App\\Controller\\PaymentController::paymentHistory<\/a>"],[0,6,"<a href=\"RegisterController.php.html#91\">App\\Controller\\RegisterController::register<\/a>"],[0,1,"<a href=\"RegisterController.php.html#132\">App\\Controller\\RegisterController::termsConditions<\/a>"],[0,6,"<a href=\"ScanController.php.html#14\">App\\Controller\\ScanController::scanPage<\/a>"],[0,1,"<a href=\"ScanController.php.html#63\">App\\Controller\\ScanController::errorPage<\/a>"],[0,1,"<a href=\"SecurityController.php.html#18\">App\\Controller\\SecurityController::__construct<\/a>"],[0,6,"<a href=\"SecurityController.php.html#23\">App\\Controller\\SecurityController::login<\/a>"],[0,10,"<a href=\"SecurityController.php.html#65\">App\\Controller\\SecurityController::redirectAfterLogin<\/a>"],[0,1,"<a href=\"SecurityController.php.html#151\">App\\Controller\\SecurityController::accessDenied<\/a>"],[0,1,"<a href=\"SecurityController.php.html#157\">App\\Controller\\SecurityController::loginCheck<\/a>"],[0,1,"<a href=\"SecurityController.php.html#167\">App\\Controller\\SecurityController::logout<\/a>"],[0,1,"<a href=\"UserController.php.html#17\">App\\Controller\\UserController::__construct<\/a>"],[0,3,"<a href=\"UserController.php.html#22\">App\\Controller\\UserController::index<\/a>"],[0,2,"<a href=\"UserController.php.html#45\">App\\Controller\\UserController::toggleUser<\/a>"],[0,2,"<a href=\"UserController.php.html#59\">App\\Controller\\UserController::deleteUser<\/a>"],[0,1,"<a href=\"VentesController.php.html#20\">App\\Controller\\VentesController::__construct<\/a>"],[0,10,"<a href=\"VentesController.php.html#25\">App\\Controller\\VentesController::index<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 shadow-lg p-4 rounded bg-white d-flex flex-column flex-md-row">
+
+            <!-- Partie gauche : Résumé -->
+            <div class="col-md-6 mb-4 mb-md-0 pe-md-4 border-end">
+                <h4 class="mb-3">Résumé de votre commande</h4>
+                <div class="fs-2 fw-bold">Billet</div>
+                <strong>Prix total :</strong> {{ montantTotal }}€
+            </div>
+
+            <!-- Partie droite : Formulaire Symfony -->
+            <div class="col-md-6 ps-md-4">
+                {# <div>
+                    <strong>Prix total :</strong> {{ montantTotal }}€
+                </div> #}
+
+                {{ form_start(form) }}
+
+   {% if errors is defined and errors|length > 0 %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, error in errors %}
+                    <li>{{ form_errors(form[field]) }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+                    {# <div class="mb-3">
+                        {{ form_label(form.email) }}
+                        {{ form_widget(form.email) }}
+                        {{ form_errors(form.email) }}
+                    </div> #}
+
+<div class="mb-3">
+    <label class="form-label">Adresse email</label>
+    <input type="text" class="form-control" value="{{ email }}" readonly>
+</div>
+
+                    <div class="mb-3">
+                        {{ form_label(form.cardholder, 'Nom du titulaire') }}
+                        {{ form_widget(form.cardholder) }}
+                        {{ form_errors(form.cardholder) }}
+                    </div>
+
+
+                    <div class="mb-3">
+                        {{ form_label(form.card_number, 'Informations de la carte') }}
+                       {{ form_widget(form.card_number, {'attr': {'placeholder': '1234 1234 1234 1234', 'class': 'card-number-input'}}) }}
+                        {{ form_errors(form.card_number) }}
+
+
+                        <div class="d-flex gap-2 flex-wrap mb-2 mt-2">
+                            <img src="https://img.icons8.com/color/32/visa.png"/>
+                            <img src="https://img.icons8.com/color/32/mastercard-logo.png"/>
+                            <img src="https://img.icons8.com/color/32/amex.png"/>
+                            <img src="https://img.icons8.com/color/32/discover.png"/>
+                            <img src="https://img.icons8.com/color/32/jcb.png"/>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                            {{ form_label(form.expiration, 'Date d\'expiration') }}
+                                {{ form_widget(form.expiration, {'attr': {'placeholder': 'MM / AA'}}) }}
+                                {{ form_errors(form.expiration) }}
+                            </div>
+                            <div class="col-6">
+                             {{ form_label(form.cvc, 'CVC') }}
+                                {{ form_widget(form.cvc, {'attr': {'placeholder': 'CVC'}}) }}
+                                {{ form_errors(form.cvc) }}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                     {{ form_label(form.country, 'Pays ou région') }}
+                        {{ form_label(form.country) }}
+                        {{ form_widget(form.country) }}
+                        {{ form_errors(form.country) }}
+                    </div>
+
+                    {{ form_widget(form.submit) }}
+
+                    <div class="mt-4 text-center">
+                        <a href="#" class="text-decoration-none">Conditions d'utilisation</a> · 
+                        <a href="#" class="text-decoration-none">Confidentialité</a>
+                    </div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'home/_footer.html.twig' %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const input = document.querySelector('.card-number-input');
+    if (input) {
+        input.addEventListener('input', function (e) {
+            let value = input.value.replace(/\D/g, ''); // Supprime tout sauf les chiffres
+            value = value.substring(0, 16); // Limite à 16 chiffres
+            input.value = value.replace(/(.{4})/g, '$1 ').trim(); // Ajoute un espace toutes les 4 chiffres
+        });
+    }
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,185 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouveau Billet{% endblock %}
+
+{% block body %}
+{% include '_admin/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px !important;
+    }
+    .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .white-box {
+        background-color: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+    }
+
+    .ticket-type .form-check {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Classe pour les messages d'erreur */
+    .error-message {
+        color: red !important; 
+        margin-top: 5px;
+    }
+</style>
+
+<div class="container custom-space">
+    <div class="form-container">
+        <h1 class="text-center mb-4">Créer un nouveau Billet</h1>
+
+        {{ form_start(form, {'attr': {'id': 'billetForm'}}) }}
+
+        <div class="form-group mb-3">
+            {{ form_label(form.type, 'Type de billet', {'label_attr': {'class': 'form-label'}}) }}
+            <div class="white-box">
+                <div class="ticket-type">
+                    {% for choice in form.type %}
+                        <div class="form-check">
+                            {{ form_widget(choice, {'attr': {'class': 'form-check-input'}}) }}
+                            {{ form_label(choice, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {{ form_errors(form.type, {'attr': {'class': 'error-message'}}) }} 
+        </div>
+
+        <div class="form-group custom-type mb-2">
+            <label class="form-label" for="{{ form.customType.vars.id }}">Entrez le type personnalisé :</label>
+            {{ form_widget(form.customType, {'attr': {'class': 'form-control', 'id': 'inputField'}}) }}
+            {{ form_errors(form.customType, {'attr': {'class': 'error-message'}}) }} 
+        </div>
+
+        <div class="form-group mb-4">
+            {{ form_label(form.tarif, 'Tarif du billet', {'label_attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.tarif, {'attr': {'class': 'form-control', 'id': 'tarifField'}}) }}
+            {{ form_errors(form.tarif, {'attr': {'class': 'error-message'}}) }} 
+        </div>
+
+<div class="form-group mb-4">
+    {{ form_label(form.stock, 'Quantité en stock', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.stock, {'attr': {'class': 'form-control', 'id': 'stockField'}}) }}
+    {{ form_errors(form.stock, {'attr': {'class': 'error-message'}}) }}
+</div>
+
+<div class="row justify-content-center gap-2 mt-4">
+            <a href="{{ path('billet_index') }}" class="btn btn-secondary col-auto">Retour à la liste</a>
+            <button type="submit" class="btn btn-primary col-auto">Sauvegarder</button>
+        </div>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success mt-3">{{ message }}</div>
+        {% endfor %}
+
+      {% for message in app.flashes('error') %}
+    <div class="error-message mt-3">{{ message }}</div>
+{% endfor %}
+
+
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% block javascripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ticketTypeRadios = document.querySelectorAll('.ticket-type input[type="radio"]');
+    const customTypeField = document.querySelector('.custom-type');
+    const customTypeInput = document.querySelector('#{{ form.customType.vars.id }}');
+    const tarifInput = document.getElementById('tarifField'); // Utilisation de l'id tarifField
+    const inputField = document.getElementById('inputField'); // Utilisation de l'id inputField
+    const form = document.querySelector('.form');
+
+    // Fonction pour échapper les caractères spéciaux
+    function escapeHTML(str) {
+        return str.replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&#039;");
+    }
+
+    // Fonction de validation
+    function validateInput(value) {
+        const regex = /^[a-zA-Z0-9\s]*$/; // Regex pour autoriser uniquement les lettres et les chiffres
+        return regex.test(value);
+    }
+
+    // Fonction de validation du formulaire
+    function validateForm(event) {
+        const customTypeValue = escapeHTML(customTypeInput.value);
+        const tarifValue = escapeHTML(tarifInput.value);
+        const inputValue = escapeHTML(inputField.value); // Ajout de la validation pour inputField
+        
+        let isValid = true;
+
+        // Validation du type personnalisé
+        if (customTypeField.style.display === 'block' && !validateInput(customTypeValue)) {
+            alert("Le type personnalisé ne doit contenir que des lettres et des chiffres.");
+            isValid = false;
+        }
+
+        // Validation du tarif
+        if (!validateInput(tarifValue)) {
+            alert("Le tarif ne doit contenir que des lettres et des chiffres.");
+            isValid = false;
+        }
+
+        // Validation du champ de type de billet
+        if (!validateInput(inputValue)) {
+            alert("Le type de billet ne doit contenir que des lettres et des chiffres.");
+            isValid = false;
+        }
+
+        // Si le formulaire n'est pas valide, empêcher la soumission
+        if (!isValid) {
+            event.preventDefault();
+        }
+    }
+
+    // Ajout de l'écouteur d'événements pour la soumission du formulaire
+    form.addEventListener('submit', validateForm);
+
+    function toggleCustomTypeField() {
+        const selectedRadio = document.querySelector('.ticket-type input[type="radio"]:checked');
+        if (selectedRadio && selectedRadio.value === "other") {
+            customTypeField.style.display = 'block';
+            customTypeInput.focus();
+        } else {
+            customTypeField.style.display = 'none';
+        }
+    }
+
+    // Sélectionne le bouton radio "Autre" si un type personnalisé est défini
+    if (customTypeInput.value !== '') {
+        document.querySelector('.ticket-type input[value="other"]').checked = true;
+        customTypeField.style.display = 'block';
+    }
+
+    // Ajoute l'écouteur d'événement pour changer la sélection
+    ticketTypeRadios.forEach(radio => {
+        radio.addEventListener('change', toggleCustomTypeField);
+    });
+
+    toggleCustomTypeField();
+});
+</script>
+{% endblock %}
+
+</div>
+{% endblock %}

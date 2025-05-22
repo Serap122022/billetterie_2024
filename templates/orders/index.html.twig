@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Passer au paiement{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+
+    <main class="container mt-5" style="margin-top: 90px !important;">
+        <h2 class="text-center mb-4">Détails de votre commande</h2>
+
+        <table class="table table-bordered text-center">
+            <thead>
+                <tr>
+                    <th>Type de Billet</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for billetType, item in groupedItems %}
+                    <tr>
+                        <td>{{ billetType }}</td>
+                        <td>{{ item.quantite }}</td>
+                        <td>{{ item.prixUnitaire }}€</td>
+                        <td>{{ item.total }}€</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center mb-4">
+            <h4><strong>Total à payer : </strong>{{ totalPrice|number_format(2, ',', ' ') }}€</h4>
+        </div>
+
+        <h3 class="text-center mb-4">Complétez vos informations</h3>
+
+        {# Formulaire de confirmation des informations de commande #}
+        {{ form_start(form) }}
+            {{ form_row(form._token) }}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="orderKey">Clé de la commande</label>
+                        {{ form_widget(form.orderKey, { 'attr': {'class': 'form-control', 'readonly': 'readonly'} }) }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="orderDate">Date de la commande</label>
+                        {{ form_widget(form.orderDate, { 'attr': {'class': 'form-control', 'readonly': 'readonly'} }) }}
+                    </div>
+                </div>
+            </div>
+
+<div class="form-group mt-2">
+    <label for="totalPrice">Montant Total</label>
+    <div class="input-group">
+        <input type="text" id="totalPrice" name="orders[totalPrice]" class="form-control" value="{{ totalPrice|number_format(2, ',', ' ') }} €" readonly="readonly" autocomplete="off">
+    </div>
+</div>
+
+
+            <div class="row mt-2"> 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName">Prénom</label>
+                        {{ form_widget(form.firstName, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName">Nom</label>
+                        {{ form_widget(form.lastName, { 'attr': {'class': 'form-control'} }) }} 
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-2"> 
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ app.user.email }}" readonly>
+            </div>
+
+            <div class="form-group mt-2">  
+                <label for="address">Adresse</label>
+                {{ form_widget(form.address, { 'attr': {'class': 'form-control'} }) }} 
+            </div>
+
+            <div class="row mt-2">  
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="postalCode">Code Postal</label>
+                        {{ form_widget(form.postalCode, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city">Ville</label>
+                        {{ form_widget(form.city, { 'attr': {'class': 'form-control'} }) }} 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="country">Pays</label>
+                        {{ form_widget(form.country, { 'attr': {'class': 'form-control'} }) }} 
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-credit-card"></i> Confirmer et passer au paiement
+                </button>
+            </div>
+        {{ form_end(form) }}
+
+        <div class="text-center mt-4">
+            <a href="{{ path('panier_clear') }}" class="btn btn-danger mx-2">
+                <i class="fa-regular fa-trash"></i> Vider le panier
+            </a>
+            <a href="{{ path('panier_index') }}" class="btn btn-secondary mx-2">
+                <i class="fa-solid fa-arrow-left"></i> Retour au panier
+            </a>
+        </div>
+    </main>
+
+    {% for error in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endfor %}
+    
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

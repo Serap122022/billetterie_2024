@@ -1,0 +1,191 @@
+{% block header %}
+<style>
+/* NAVBAR GÉNÉRALE */
+.navbar {
+    z-index: 1030;
+    padding-right: 20px;
+}
+
+/* LIENS AVEC ICÔNES (desktop + mobile) */
+.navbar-nav .nav-link {
+    font-size: 0.9rem;        /* Réduction du texte */
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.75rem;
+}
+
+.navbar-nav .nav-link i {
+    font-size: 0.85rem;       /* Taille icône réduite */
+    margin-right: 0.4rem;     /* Espace entre icône et texte */
+}
+
+/* BOUTONS DANS NAVBAR */
+.navbar .btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+}
+
+/* MENU RESPONSIVE */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1020;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-toggler {
+        z-index: 1031;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .navbar-nav .nav-link i {
+        font-size: 0.9rem;
+    }
+
+    .navbar .btn {
+        font-size: 0.9rem;
+    }
+}
+
+</style>
+    <!-- Navbar Start -->
+   
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow fixed-top p-0 m-0" style="z-index: 1030;">
+          <div class="container-fluid">
+            <a href="" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                <img src="/assets/img/logosJO/Logo_JO.svg.png" style="width: 100px; height: auto;" class="me-2 text-primary" alt="Logo JO">
+                <img src="/assets/img/logosJO/Logo_PO.svg.png" style="width: 100px; height: auto;" class="ms-2 text-primary" alt="Logo PO">
+            </a>
+
+            <!-- Bouton pour mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Liens de navigation -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto d-flex align-items-center text-center">
+                    {% if app.request.get('_route') != 'app_home' %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('app_home') }}">
+                                <i class="fa fa-home me-2"></i> Accueil
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        {% if app.request.get('_route') != 'app_admin' %}
+                            <li class="nav-item">
+                                <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('app_admin') }}">
+                                    <i class="fa fa-arrow-right me-2"></i> Administration
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+
+                    {% if app.request.get('_route') != 'billets_public' %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('billets_public') }}">
+                                <i class="fa-solid fa-ticket me-2"></i> Billets
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if app.request.get('_route') != 'evenements_index' %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('evenements_index') }}">
+                                <i class="fa fa-calendar-alt me-2"></i> Événements
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if app.request.get('_route') != 'participantes_index' %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('participantes_index') }}">
+                                <i class="fa fa-user-friends me-2"></i> Participantes
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% set hasPaid = app.session.get('hasPaid', false) %}
+                    {% if hasPaid %}
+                        <li class="nav-item">
+                            <a class="btn btn-primary rounded-pill py-2 px-4 ms-3" href="{{ path('payment_history') }}">
+                                <i class="fa-solid fa-history me-2"></i> Achats
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('panier_index') }}">
+                                <i class="fa-solid fa-cart-shopping me-2"></i> Panier
+                                {% set totalBillets = 0 %}
+                                {% for item in app.session.get('panier', []) %}
+                                    {% if item.quantity is defined %}
+                                        {% set totalBillets = totalBillets + item.quantity %}
+                                    {% endif %}
+                                {% endfor %}
+                                <span id="panier-count" class="badge bg-light text-dark ms-2">
+                                    {{ totalBillets > 0 ? totalBillets : '0' }}
+                                </span>
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li class="nav-item">
+                            <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('app_logout') }}">
+                                <i class="fa fa-sign-out-alt me-2"></i> Déconnexion
+                            </a>
+                        </li>
+                    {% else %}
+                        {% if app.request.get('_route') != 'app_register' %}
+                            <li class="nav-item">
+                                <a class="btn btn-danger rounded-pill py-2 px-4 ms-3" href="{{ path('app_register') }}">
+                                    <i class="fa fa-user-plus me-2"></i> Inscription
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if app.request.get('_route') != 'app_login' %}
+                            <li class="nav-item">
+                                <a class="btn btn-danger rounded-pill py-2 px-4 ms-3 me-3" href="{{ path('app_login') }}">
+                                    <i class="fa fa-arrow-right me-2"></i> Connexion
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+        </div>
+            </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let navbarToggler = document.querySelector(".navbar-toggler");
+    let navbarCollapse = document.querySelector("#navbarNav");
+
+    // Ferme le menu lorsque l'on clique sur un lien du menu
+    document.querySelectorAll(".nav-item a").forEach(link => {
+        link.addEventListener("click", function () {
+            if (navbarCollapse.classList.contains("show")) {
+                navbarToggler.click(); // Simule un clic pour refermer le menu
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

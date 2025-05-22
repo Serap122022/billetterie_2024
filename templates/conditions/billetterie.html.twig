@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des Cookies{% endblock %}
+
+{% block body %}
+{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+        margin-top: 80px;
+    }
+    .cookie-card {
+        margin-bottom: 20px;
+    }
+    .btn-save {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container custom-space">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h1>Gestion des Cookies</h1>
+        </div>
+        <div class="card-body">
+            <p>
+                Vous pouvez ici gérer vos préférences en matière de cookies. Ces paramètres vous permettent de contrôler les types de cookies que nous utilisons sur votre appareil.
+            </p>
+
+            <form id="cookie-settings-form">
+                <div class="cookie-card card p-3">
+                    <h4>Cookies Essentiels</h4>
+                    <p>Ces cookies sont nécessaires pour le bon fonctionnement du site et ne peuvent pas être désactivés.</p>
+                    <div>
+                        <input type="checkbox" checked disabled>
+                        <label>Activé par défaut</label>
+                    </div>
+                </div>
+
+                <div class="cookie-card card p-3">
+                    <h4>Cookies Analytiques</h4>
+                    <p>Ces cookies nous aident à analyser l'utilisation de notre site afin d'améliorer votre expérience.</p>
+                    <div>
+                        <input type="checkbox" id="analytics-cookies" name="analytics_cookies" checked>
+                        <label for="analytics-cookies">Activer les cookies analytiques</label>
+                    </div>
+                </div>
+
+                <div class="cookie-card card p-3">
+                    <h4>Cookies Publicitaires</h4>
+                    <p>Ces cookies permettent de vous proposer des publicités ciblées en lien avec les Jeux Olympiques.</p>
+                    <div>
+                        <input type="checkbox" id="ads-cookies" name="ads_cookies">
+                        <label for="ads-cookies">Activer les cookies publicitaires</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-save">Sauvegarder mes préférences</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% include "home/_footer.html.twig" %}
+{% block JavaScript %}
+<script>
+    document.getElementById('cookie-settings-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Vos préférences de cookies ont été sauvegardées.');
+    });
+</script>
+{% endblock %}
+{% endblock %}

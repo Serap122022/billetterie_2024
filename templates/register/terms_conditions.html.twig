@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conditions d'Utilisation{% endblock %}
+
+{% block body %}
+   {% include 'home/_navbar.html.twig' %}
+
+   <style>
+        /* Ajoute un espace entre la navbar et le titre */
+        .form-title {
+            margin-top: 5rem !important;
+        }
+
+        /* Change la couleur des titres h2 en bleu marine */
+        h1, h2 {
+            color: navy; 
+        }
+
+        /* Style du bouton de retour */
+        .btn-retour {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+    </style>
+
+    <div class="container mt-5">
+        <h1 class="form-title mb-4">Conditions d'Utilisation</h1>
+
+        <p>Bienvenue sur notre site des Jeux Olympiques. En vous inscrivant et en utilisant notre site, vous acceptez les conditions suivantes :</p>
+
+        <h2>1. Acceptation des Conditions</h2>
+        <p>En créant un compte et en utilisant notre site, vous acceptez de respecter toutes les lois et règlements applicables. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser notre site.</p>
+
+        <h2>2. Inscription et Compte</h2>
+        <p>Pour accéder à certaines fonctionnalités de notre site, vous devez créer un compte. Vous vous engagez à fournir des informations exactes et à jour lors de votre inscription.</p>
+        <p>Vous êtes responsable de la confidentialité de votre mot de passe et de toutes les activités qui se produisent sous votre compte. Si vous suspectez une utilisation non autorisée de votre compte, vous devez nous en informer immédiatement.</p>
+
+        <h2>3. Utilisation de votre Compte</h2>
+        <p>Vous vous engagez à utiliser votre compte uniquement à des fins légales et conformément à ces conditions. Vous ne devez pas :</p>
+        <ul>
+            <li>Utiliser le site d'une manière qui pourrait endommager, désactiver, surcharger ou altérer le site;</li>
+            <li>Tenter d'accéder à des zones non autorisées du site;</li>
+            <li>Utiliser des robots, des spiders ou d'autres moyens automatisés pour accéder au site;</li>
+            <li>Transmettre des virus ou tout autre code malveillant.</li>
+        </ul>
+
+        <h2>4. Politique de Sécurité</h2>
+        <p>Nous prenons la sécurité de vos données très au sérieux. Voici quelques mesures que nous mettons en place :</p>
+        <ul>
+            <li><strong>Chiffrement des Données :</strong> Toutes les données sensibles, y compris les mots de passe, sont stockées de manière sécurisée grâce à des techniques de chiffrement.</li>
+            <li><strong>Accès Limité :</strong> L'accès à vos données personnelles est limité aux employés et partenaires qui en ont besoin pour fournir des services.</li>
+            <li><strong>Surveillance :</strong> Nous surveillons en permanence notre système pour détecter des activités suspectes et prévenir des violations de sécurité.</li>
+            <li><strong>Formation :</strong> Nos employés reçoivent une formation régulière sur les meilleures pratiques en matière de sécurité des données.</li>
+        </ul>
+        <p>Bien que nous prenions des mesures raisonnables pour protéger vos informations, aucun système n'est totalement sécurisé. Nous vous encourageons à prendre des précautions pour protéger vos informations personnelles.</p>
+
+        <h2>5. Modifications des Conditions</h2>
+        <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications entreront en vigueur dès leur publication sur notre site. Il est de votre responsabilité de consulter régulièrement ces conditions.</p>
+
+        <h2>6. Contact</h2>
+        <p>Si vous avez des questions concernant ces conditions, veuillez nous contacter à l'adresse suivante : <a href="mailto:support@jeuxolympiques.com">support@jeuxolympiques.com</a></p>
+
+        <p>Merci de votre compréhension et de votre coopération.</p>
+
+        <!-- Bouton de retour -->
+        <div class="btn-retour">
+            <a href="{{ path('app_register') }}" class="btn btn-primary">Retour à l'inscription</a>
+        </div>
+    </div>
+
+     {% include "home/_footer.html.twig" %}
+{% endblock %}

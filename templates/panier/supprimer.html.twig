@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer un Billet{% endblock %}
+
+{% block body %}
+<h1>Supprimer un Billet</h1>
+
+<p>Êtes-vous sûr de vouloir supprimer le billet "{{ billet.nom }}" de votre panier ?</p>
+
+<form action="{{ path('supprimer_panier', { ticketId: billet.id }) }}" method="POST">
+    <button type="submit">Confirmer la suppression</button>
+</form>
+
+<a href="{{ path('panier_index') }}">Annuler</a>
+{% endblock %}

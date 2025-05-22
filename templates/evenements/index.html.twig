@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des événements olympiques des Jeux Olympiques
+{% endblock %}
+
+{% block body %}
+
+	{% include 'home/_navbar.html.twig' %}
+
+
+<h1>Liste des événements olympiques</h1>
+
+ <ul>
+    {% for evenement in evenements %}
+        <li>
+            <strong>{{ evenement.nomEvenement }}</strong><br>
+            {{ evenement.description }}<br>
+            Date : {{ evenement.dateEvenement|date('d/m/Y H:i') }}<br>
+            {% if evenement.urlImage %}
+                <img src="{{ evenement.urlImage }}" alt="{{ evenement.nomEvenement }}" style="width: 100px;">
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul> 
+
+
+{% include "home/_footer.html.twig" %} 
+</body>
+{% endblock %}

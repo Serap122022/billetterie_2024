@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Redirection vers la page des billets{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+    
+    <div class="container text-center mt-5">
+        <h1>Redirection en cours...</h1>
+        <p>Vous allez être redirigé vers la page d'achat des billets dans 5 secondes.</p>
+
+    <script>
+        // Redirection automatique après 1 secondes
+        setTimeout(function() {
+            {# window.location.href = "{{ path('billets_user_index') }}"; #}
+        }, 1000);
+    </script>
+
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un utilisateur{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+
+    <style>
+        /* Ajoute un espace entre la navbar et le titre */
+        .form-title {
+            margin-top: 5rem !important;
+            margin-left: 10rem !important;
+        }
+        
+        /* Conteneur du champ de mot de passe */
+        .password-group {
+            position: relative;
+        }
+
+        /* Style du champ de mot de passe */
+        .password-input {
+            padding-right: 2.5rem; /* Ajoute de l'espace à droite pour l'icône */
+        }
+
+        /* Position fixe de l'icône dans le champ */
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10; /* Assure que l'icône reste visible */
+        }
+
+        .password-toggle i {
+            font-size: 1.3rem;
+            color: #555;
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="mb-4 ms-5 form-title">Créer un utilisateur</h1> 
+
+ <div class="mx-auto" style="max-width: 75%;">
+    {{ form_start(form, {
+        attr: {
+            class: 'needs-validation',
+            id: 'userForm',
+            novalidate: 'novalidate',
+            'data-register-url': path('app_register'),
+            'data-login-url': path('app_login')
+        }
+    }) }}
+            
+            <div class="mb-3">
+                {{ form_label(form.username) }}
+                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.username) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(form.firstName) }}
+                {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.firstName) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.email) }}
+            </div>
+
+            <!-- Champ Mot de passe -->
+            <div class="mb-3 password-group">
+                {{ form_label(form.plainPassword.first) }}
+                <div class="position-relative">
+                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control password-input'}}) }}
+                    <button type="button" class="password-toggle">
+                        <i class="fa fa-eye"></i>
+                    </button>
+                </div>
+                {{ form_errors(form.plainPassword.first) }}
+            </div>
+
+            <!-- Champ Confirmation du mot de passe -->
+            <div class="mb-3 password-group">
+                {{ form_label(form.plainPassword.second) }}
+                <div class="position-relative">
+                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control password-input'}}) }}
+                    <button type="button" class="password-toggle">
+                        <i class="fa fa-eye"></i>
+                    </button>
+                </div>
+                {{ form_errors(form.plainPassword.second) }}
+            </div>
+
+              {# Ajout du champ des termes et conditions #}
+         <div class="mb-3 form-check">
+    {{ form_widget(form.terms, {'attr': {'class': 'form-check-input'}}) }}
+    {{ form_label(form.terms, 'J\'accepte les termes et conditions', {'label_attr': {'class': 'form-check-label'}}) }}
+    {{ form_errors(form.terms) }}
+    <a href="{{ path('terms_conditions') }}" class="terms-link">Lire les termes et conditions</a>
+</div>
+
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Créer l'utilisateur</button>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+    {% include "home/_footer.html.twig" %}
+
+{% endblock %}

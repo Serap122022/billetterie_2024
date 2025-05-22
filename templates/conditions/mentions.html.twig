@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions Légales{% endblock %}
+
+{% block body %}
+
+{% include 'home/_navbar.html.twig' %}
+
+<style>
+    .custom-space {
+    }
+
+</style>
+
+<div class="container custom-space">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h1>Mentions Légales</h1>
+            <p>En vigueur au 06/05/2025</p>
+        </div>
+        <div class="card-body">
+            <p class="text-justify">
+                Conformément aux dispositions de la loi n°2004-575 du 21 juin 2004 pour la Confiance en l’économie numérique, il est porté à la connaissance des utilisateurs et visiteurs, ci-après l' "Utilisateur", du site 
+                <strong>www.olympics-ticketing.com</strong>, ci-après le "Site", les présentes mentions légales.
+            </p>
+            <p class="text-justify">
+                La connexion et la navigation sur le Site par l’Utilisateur implique acceptation intégrale et sans réserve des présentes mentions légales.
+            </p>
+            <p class="text-justify">
+                Ces dernières sont accessibles sur le Site à la rubrique <em>"Mentions légales".</em>
+            </p>
+
+            <h2 class="mt-4">Édition du Site</h2>
+            <p class="text-justify">
+                L’édition et la direction de la publication du Site est assurée par 
+                <strong>_______________ _______________</strong>, dont le numéro de téléphone est 
+                <strong>_______________</strong>, et l'adresse e-mail <strong>_______________</strong>.
+            </p>
+            <p>Ci-après l'<strong>Editeur</strong>.</p>
+
+            <h2 class="mt-4">Hébergeur</h2>
+            <p class="text-justify">
+                L'hébergeur du Site est la société <strong>_______________</strong>, dont le siège social est situé au <strong>_______________</strong>.
+            </p>
+
+            <h2 class="mt-4">Accès au Site</h2>
+            <p class="text-justify">
+                Le Site est normalement accessible, à tout moment, à l'Utilisateur. Toutefois, l'Editeur pourra, à tout moment, suspendre, limiter ou interrompre le Site afin de procéder, notamment, à des mises à jour ou des modifications de son contenu. L'Editeur ne pourra en aucun cas être tenu responsable des conséquences éventuelles de cette indisponibilité sur les activités de l'Utilisateur.
+            </p>
+
+            <h2 class="mt-4">Collecte des Données</h2>
+            <p class="text-justify">
+                Le Site assure à l'Utilisateur une collecte et un traitement des données personnelles dans le respect de la vie privée conformément à la loi n°78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés et dans le respect de la réglementation applicable en matière de traitement des données à caractère personnel conformément au règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 (ci-après, ensemble, la <em>"Règlementation applicable en matière de protection des Données à caractère personnel"</em>).
+            </p>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% include "home/_footer.html.twig" %}
+{% endblock %}

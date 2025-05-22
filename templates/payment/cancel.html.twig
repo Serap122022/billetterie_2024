@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande annulée{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Commande annulée</h2>
+        <p class="text-center">Votre commande a été annulée. Si vous avez des questions, n'hésitez pas à nous contacter.</p>
+
+        <div class="text-center">
+            <a href="{{ path('app_home') }}" class="btn btn-secondary">Retour à l'accueil</a>
+        </div>
+    </div>
+
+    {% include "home/_footer.html.twig" %}
+{% endblock %}

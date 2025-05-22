@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\xampp\htdocs\billetterie_2024\src\Entity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css?v=9.2.32" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css?v=9.2.32" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css?v=9.2.32" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">C:\xampp\htdocs\billetterie_2024\src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Entity</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="User.php.html#14">App\Entity\User</a></td><td class="text-right">8%</td></tr>
+       <tr><td><a href="Admin.php.html#14">App\Entity\Admin</a></td><td class="text-right">54%</td></tr>
+       <tr><td><a href="Payment.php.html#8">App\Entity\Payment</a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#11">App\Entity\OrdersItem</a></td><td class="text-right">60%</td></tr>
+       <tr><td><a href="Orders.php.html#15">App\Entity\Orders</a></td><td class="text-right">61%</td></tr>
+       <tr><td><a href="Billets.php.html#10">App\Entity\Billets</a></td><td class="text-right">62%</td></tr>
+       <tr><td><a href="Employes.php.html#11">App\Entity\Employes</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Evenements.php.html#8">App\Entity\Evenements</a></td><td class="text-right">71%</td></tr>
+       <tr><td><a href="Panier.php.html#12">App\Entity\Panier</a></td><td class="text-right">77%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="User.php.html#14">App\Entity\User</a></td><td class="text-right">1517</td></tr>
+       <tr><td><a href="Orders.php.html#15">App\Entity\Orders</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Admin.php.html#14">App\Entity\Admin</a></td><td class="text-right">130</td></tr>
+       <tr><td><a href="Billets.php.html#10">App\Entity\Billets</a></td><td class="text-right">66</td></tr>
+       <tr><td><a href="OrdersItem.php.html#11">App\Entity\OrdersItem</a></td><td class="text-right">44</td></tr>
+       <tr><td><a href="Employes.php.html#11">App\Entity\Employes</a></td><td class="text-right">37</td></tr>
+       <tr><td><a href="Panier.php.html#12">App\Entity\Panier</a></td><td class="text-right">16</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Admin.php.html#102"><abbr title="App\Entity\Admin::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#156"><abbr title="App\Entity\Admin::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#184"><abbr title="App\Entity\Admin::getOrders">getOrders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#189"><abbr title="App\Entity\Admin::addOrder">addOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#198"><abbr title="App\Entity\Admin::removeOrder">removeOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#208"><abbr title="App\Entity\Admin::getSalt">getSalt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#213"><abbr title="App\Entity\Admin::eraseCredentials">eraseCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#218"><abbr title="App\Entity\Admin::getUserIdentifier">getUserIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#223"><abbr title="App\Entity\Admin::getPlainPassword">getPlainPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#238"><abbr title="App\Entity\Admin::getResetToken">getResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#243"><abbr title="App\Entity\Admin::setResetToken">setResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#249"><abbr title="App\Entity\Admin::getResetTokenExpiresAt">getResetTokenExpiresAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Admin.php.html#254"><abbr title="App\Entity\Admin::setResetTokenExpiresAt">setResetTokenExpiresAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Billets.php.html#42"><abbr title="App\Entity\Billets::updateStock">updateStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Billets.php.html#95"><abbr title="App\Entity\Billets::getStock">getStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Billets.php.html#100"><abbr title="App\Entity\Billets::setStock">setStock</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Billets.php.html#138"><abbr title="App\Entity\Billets::addOrdersItem">addOrdersItem</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Billets.php.html#149"><abbr title="App\Entity\Billets::removeOrdersItem">removeOrdersItem</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#68"><abbr title="App\Entity\Employes::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#106"><abbr title="App\Entity\Employes::getPasswordHash">getPasswordHash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#111"><abbr title="App\Entity\Employes::setPasswordHash">setPasswordHash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#117"><abbr title="App\Entity\Employes::getUserIdentifier">getUserIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#138"><abbr title="App\Entity\Employes::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#149"><abbr title="App\Entity\Employes::setIsActive">setIsActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#171"><abbr title="App\Entity\Employes::eraseCredentials">eraseCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Evenements.php.html#33"><abbr title="App\Entity\Evenements::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Evenements.php.html#100"><abbr title="App\Entity\Evenements::getDisplayDetails">getDisplayDetails</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#125"><abbr title="App\Entity\Orders::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#130"><abbr title="App\Entity\Orders::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#135"><abbr title="App\Entity\Orders::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#146"><abbr title="App\Entity\Orders::setOrderKey">setOrderKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#155"><abbr title="App\Entity\Orders::getOrderDate">getOrderDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#160"><abbr title="App\Entity\Orders::setOrderDate">setOrderDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#254"><abbr title="App\Entity\Orders::isPaid">isPaid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#259"><abbr title="App\Entity\Orders::setPaid">setPaid</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#264"><abbr title="App\Entity\Orders::isScanned">isScanned</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#269"><abbr title="App\Entity\Orders::setScanned">setScanned</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Orders.php.html#274"><abbr title="App\Entity\Orders::updateScannedStatus">updateScannedStatus</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#42"><abbr title="App\Entity\OrdersItem::generateUniqueTicketKey">generateUniqueTicketKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#60"><abbr title="App\Entity\OrdersItem::generateSecureTicketKey">generateSecureTicketKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#73"><abbr title="App\Entity\OrdersItem::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#89"><abbr title="App\Entity\OrdersItem::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#94"><abbr title="App\Entity\OrdersItem::setUser">setUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#111"><abbr title="App\Entity\OrdersItem::getUniqueTicketKey">getUniqueTicketKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="OrdersItem.php.html#116"><abbr title="App\Entity\OrdersItem::setUniqueTicketKey">setUniqueTicketKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Panier.php.html#86"><abbr title="App\Entity\Panier::setMontant">setMontant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Panier.php.html#92"><abbr title="App\Entity\Panier::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Panier.php.html#97"><abbr title="App\Entity\Panier::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#47"><abbr title="App\Entity\Payment::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#52"><abbr title="App\Entity\Payment::getMontant">getMontant</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#63"><abbr title="App\Entity\Payment::getMethodePaiement">getMethodePaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#74"><abbr title="App\Entity\Payment::getStatutPaiement">getStatutPaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#79"><abbr title="App\Entity\Payment::setStatutPaiement">setStatutPaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#106"><abbr title="App\Entity\Payment::getUtilisateur">getUtilisateur</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Payment.php.html#111"><abbr title="App\Entity\Payment::setUtilisateur">setUtilisateur</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#112"><abbr title="App\Entity\User::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#117"><abbr title="App\Entity\User::getUsername">getUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#122"><abbr title="App\Entity\User::setUsername">setUsername</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#128"><abbr title="App\Entity\User::getFirstName">getFirstName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#133"><abbr title="App\Entity\User::setFirstName">setFirstName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#139"><abbr title="App\Entity\User::getEmail">getEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#144"><abbr title="App\Entity\User::setEmail">setEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#150"><abbr title="App\Entity\User::getPassword">getPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#155"><abbr title="App\Entity\User::setPassword">setPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#161"><abbr title="App\Entity\User::getPlainPassword">getPlainPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#166"><abbr title="App\Entity\User::setPlainPassword">setPlainPassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#172"><abbr title="App\Entity\User::getTerms">getTerms</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#177"><abbr title="App\Entity\User::setTerms">setTerms</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#184"><abbr title="App\Entity\User::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#189"><abbr title="App\Entity\User::setCreatedAt">setCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#196"><abbr title="App\Entity\User::getPaniers">getPaniers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#211"><abbr title="App\Entity\User::setPanier">setPanier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#235"><abbr title="App\Entity\User::getPaiements">getPaiements</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#240"><abbr title="App\Entity\User::addPaiement">addPaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#250"><abbr title="App\Entity\User::removePaiement">removePaiement</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#262"><abbr title="App\Entity\User::getUserKey">getUserKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#267"><abbr title="App\Entity\User::setUserKey">setUserKey</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#273"><abbr title="App\Entity\User::isActive">isActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#278"><abbr title="App\Entity\User::setActive">setActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#287"><abbr title="App\Entity\User::getResetToken">getResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#292"><abbr title="App\Entity\User::setResetToken">setResetToken</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#298"><abbr title="App\Entity\User::getResetTokenExpiresAt">getResetTokenExpiresAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#303"><abbr title="App\Entity\User::setResetTokenExpiresAt">setResetTokenExpiresAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#309"><abbr title="App\Entity\User::getRoles">getRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#314"><abbr title="App\Entity\User::setRoles">setRoles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#320"><abbr title="App\Entity\User::eraseCredentials">eraseCredentials</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#326"><abbr title="App\Entity\User::getUserIdentifier">getUserIdentifier</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#335"><abbr title="App\Entity\User::getOrders">getOrders</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#340"><abbr title="App\Entity\User::addOrder">addOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#350"><abbr title="App\Entity\User::removeOrder">removeOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Employes.php.html#155"><abbr title="App\Entity\Employes::getRoles">getRoles</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="Orders.php.html#108"><abbr title="App\Entity\Orders::removeOrderItem">removeOrderItem</abbr></a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Admin.php.html#198"><abbr title="App\Entity\Admin::removeOrder">removeOrder</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Billets.php.html#149"><abbr title="App\Entity\Billets::removeOrdersItem">removeOrdersItem</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Orders.php.html#274"><abbr title="App\Entity\Orders::updateScannedStatus">updateScannedStatus</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="OrdersItem.php.html#60"><abbr title="App\Entity\OrdersItem::generateSecureTicketKey">generateSecureTicketKey</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="User.php.html#211"><abbr title="App\Entity\User::setPanier">setPanier</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="User.php.html#250"><abbr title="App\Entity\User::removePaiement">removePaiement</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="User.php.html#350"><abbr title="App\Entity\User::removeOrder">removeOrder</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Admin.php.html#189"><abbr title="App\Entity\Admin::addOrder">addOrder</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Billets.php.html#42"><abbr title="App\Entity\Billets::updateStock">updateStock</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Billets.php.html#138"><abbr title="App\Entity\Billets::addOrdersItem">addOrdersItem</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Orders.php.html#146"><abbr title="App\Entity\Orders::setOrderKey">setOrderKey</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#240"><abbr title="App\Entity\User::addPaiement">addPaiement</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#340"><abbr title="App\Entity\User::addOrder">addOrder</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Orders.php.html#108"><abbr title="App\Entity\Orders::removeOrderItem">removeOrderItem</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Employes.php.html#155"><abbr title="App\Entity\Employes::getRoles">getRoles</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.32</a> using <a href="https://secure.php.net/" target="_top">PHP 8.2.12</a> and <a href="https://phpunit.de/">PHPUnit 9.6.22</a> at Tue May 13 14:29:53 CEST 2025.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js?v=9.2.32" type="text/javascript"></script>
+  <script src="../_js/d3.min.js?v=9.2.32" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js?v=9.2.32" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,1,0,0,0,0,2,4,2,0,0,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([90,0,0,0,0,0,0,0,2,0,0,100], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[54.166666666666664,32,"<a href=\"Admin.php.html#14\">App\\Entity\\Admin<\/a>"],[62.16216216216216,27,"<a href=\"Billets.php.html#10\">App\\Entity\\Billets<\/a>"],[66.66666666666666,21,"<a href=\"Employes.php.html#11\">App\\Entity\\Employes<\/a>"],[71.42857142857143,12,"<a href=\"Evenements.php.html#8\">App\\Entity\\Evenements<\/a>"],[61.29032258064516,40,"<a href=\"Orders.php.html#15\">App\\Entity\\Orders<\/a>"],[60.71428571428571,20,"<a href=\"OrdersItem.php.html#11\">App\\Entity\\OrdersItem<\/a>"],[77.27272727272727,14,"<a href=\"Panier.php.html#12\">App\\Entity\\Panier<\/a>"],[55.00000000000001,14,"<a href=\"Payment.php.html#8\">App\\Entity\\Payment<\/a>"],[8.695652173913043,44,"<a href=\"User.php.html#14\">App\\Entity\\User<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Admin.php.html#94\">App\\Entity\\Admin::__construct<\/a>"],[0,1,"<a href=\"Admin.php.html#102\">App\\Entity\\Admin::getId<\/a>"],[100,1,"<a href=\"Admin.php.html#107\">App\\Entity\\Admin::getUsername<\/a>"],[100,1,"<a href=\"Admin.php.html#112\">App\\Entity\\Admin::setUsername<\/a>"],[100,1,"<a href=\"Admin.php.html#118\">App\\Entity\\Admin::getFirstName<\/a>"],[100,1,"<a href=\"Admin.php.html#123\">App\\Entity\\Admin::setFirstName<\/a>"],[100,1,"<a href=\"Admin.php.html#129\">App\\Entity\\Admin::getEmail<\/a>"],[100,1,"<a href=\"Admin.php.html#134\">App\\Entity\\Admin::setEmail<\/a>"],[100,1,"<a href=\"Admin.php.html#140\">App\\Entity\\Admin::getPassword<\/a>"],[100,1,"<a href=\"Admin.php.html#145\">App\\Entity\\Admin::setPassword<\/a>"],[100,1,"<a href=\"Admin.php.html#151\">App\\Entity\\Admin::getCreatedAt<\/a>"],[0,1,"<a href=\"Admin.php.html#156\">App\\Entity\\Admin::setCreatedAt<\/a>"],[100,1,"<a href=\"Admin.php.html#162\">App\\Entity\\Admin::isActive<\/a>"],[100,1,"<a href=\"Admin.php.html#167\">App\\Entity\\Admin::setActive<\/a>"],[100,1,"<a href=\"Admin.php.html#173\">App\\Entity\\Admin::getRoles<\/a>"],[100,1,"<a href=\"Admin.php.html#178\">App\\Entity\\Admin::setRoles<\/a>"],[0,1,"<a href=\"Admin.php.html#184\">App\\Entity\\Admin::getOrders<\/a>"],[0,2,"<a href=\"Admin.php.html#189\">App\\Entity\\Admin::addOrder<\/a>"],[0,3,"<a href=\"Admin.php.html#198\">App\\Entity\\Admin::removeOrder<\/a>"],[0,1,"<a href=\"Admin.php.html#208\">App\\Entity\\Admin::getSalt<\/a>"],[0,1,"<a href=\"Admin.php.html#213\">App\\Entity\\Admin::eraseCredentials<\/a>"],[0,1,"<a href=\"Admin.php.html#218\">App\\Entity\\Admin::getUserIdentifier<\/a>"],[0,1,"<a href=\"Admin.php.html#223\">App\\Entity\\Admin::getPlainPassword<\/a>"],[100,2,"<a href=\"Admin.php.html#228\">App\\Entity\\Admin::setPlainPassword<\/a>"],[0,1,"<a href=\"Admin.php.html#238\">App\\Entity\\Admin::getResetToken<\/a>"],[0,1,"<a href=\"Admin.php.html#243\">App\\Entity\\Admin::setResetToken<\/a>"],[0,1,"<a href=\"Admin.php.html#249\">App\\Entity\\Admin::getResetTokenExpiresAt<\/a>"],[0,1,"<a href=\"Admin.php.html#254\">App\\Entity\\Admin::setResetTokenExpiresAt<\/a>"],[100,1,"<a href=\"Billets.php.html#36\">App\\Entity\\Billets::__construct<\/a>"],[0,2,"<a href=\"Billets.php.html#42\">App\\Entity\\Billets::updateStock<\/a>"],[100,1,"<a href=\"Billets.php.html#53\">App\\Entity\\Billets::getId<\/a>"],[100,1,"<a href=\"Billets.php.html#58\">App\\Entity\\Billets::getType<\/a>"],[100,1,"<a href=\"Billets.php.html#63\">App\\Entity\\Billets::setType<\/a>"],[100,1,"<a href=\"Billets.php.html#70\">App\\Entity\\Billets::getTarif<\/a>"],[100,1,"<a href=\"Billets.php.html#75\">App\\Entity\\Billets::setTarif<\/a>"],[100,1,"<a href=\"Billets.php.html#82\">App\\Entity\\Billets::getCustomType<\/a>"],[100,1,"<a href=\"Billets.php.html#87\">App\\Entity\\Billets::setCustomType<\/a>"],[0,1,"<a href=\"Billets.php.html#95\">App\\Entity\\Billets::getStock<\/a>"],[0,1,"<a href=\"Billets.php.html#100\">App\\Entity\\Billets::setStock<\/a>"],[100,1,"<a href=\"Billets.php.html#106\">App\\Entity\\Billets::getPaiements<\/a>"],[100,2,"<a href=\"Billets.php.html#111\">App\\Entity\\Billets::addPaiement<\/a>"],[100,3,"<a href=\"Billets.php.html#121\">App\\Entity\\Billets::removePaiement<\/a>"],[100,1,"<a href=\"Billets.php.html#132\">App\\Entity\\Billets::getOrdersItems<\/a>"],[0,2,"<a href=\"Billets.php.html#138\">App\\Entity\\Billets::addOrdersItem<\/a>"],[0,3,"<a href=\"Billets.php.html#149\">App\\Entity\\Billets::removeOrdersItem<\/a>"],[100,3,"<a href=\"Billets.php.html#160\">App\\Entity\\Billets::getDisplayType<\/a>"],[100,1,"<a href=\"Employes.php.html#61\">App\\Entity\\Employes::__construct<\/a>"],[0,1,"<a href=\"Employes.php.html#68\">App\\Entity\\Employes::getId<\/a>"],[100,1,"<a href=\"Employes.php.html#73\">App\\Entity\\Employes::getNom<\/a>"],[100,1,"<a href=\"Employes.php.html#78\">App\\Entity\\Employes::setNom<\/a>"],[100,1,"<a href=\"Employes.php.html#84\">App\\Entity\\Employes::getPrenom<\/a>"],[100,1,"<a href=\"Employes.php.html#89\">App\\Entity\\Employes::setPrenom<\/a>"],[100,1,"<a href=\"Employes.php.html#95\">App\\Entity\\Employes::getEmail<\/a>"],[100,1,"<a href=\"Employes.php.html#100\">App\\Entity\\Employes::setEmail<\/a>"],[0,1,"<a href=\"Employes.php.html#106\">App\\Entity\\Employes::getPasswordHash<\/a>"],[0,1,"<a href=\"Employes.php.html#111\">App\\Entity\\Employes::setPasswordHash<\/a>"],[0,1,"<a href=\"Employes.php.html#117\">App\\Entity\\Employes::getUserIdentifier<\/a>"],[100,1,"<a href=\"Employes.php.html#122\">App\\Entity\\Employes::getPassword<\/a>"],[100,1,"<a href=\"Employes.php.html#127\">App\\Entity\\Employes::setPassword<\/a>"],[100,1,"<a href=\"Employes.php.html#133\">App\\Entity\\Employes::getCreatedAt<\/a>"],[0,1,"<a href=\"Employes.php.html#138\">App\\Entity\\Employes::setCreatedAt<\/a>"],[100,1,"<a href=\"Employes.php.html#144\">App\\Entity\\Employes::isActive<\/a>"],[0,1,"<a href=\"Employes.php.html#149\">App\\Entity\\Employes::setIsActive<\/a>"],[75,2,"<a href=\"Employes.php.html#155\">App\\Entity\\Employes::getRoles<\/a>"],[100,1,"<a href=\"Employes.php.html#165\">App\\Entity\\Employes::setRoles<\/a>"],[0,1,"<a href=\"Employes.php.html#171\">App\\Entity\\Employes::eraseCredentials<\/a>"],[0,1,"<a href=\"Evenements.php.html#33\">App\\Entity\\Evenements::getId<\/a>"],[100,1,"<a href=\"Evenements.php.html#38\">App\\Entity\\Evenements::getNomEvenement<\/a>"],[100,1,"<a href=\"Evenements.php.html#43\">App\\Entity\\Evenements::setNomEvenement<\/a>"],[100,1,"<a href=\"Evenements.php.html#50\">App\\Entity\\Evenements::getDateEvenement<\/a>"],[100,1,"<a href=\"Evenements.php.html#55\">App\\Entity\\Evenements::setDateEvenement<\/a>"],[100,1,"<a href=\"Evenements.php.html#62\">App\\Entity\\Evenements::getDescription<\/a>"],[100,1,"<a href=\"Evenements.php.html#67\">App\\Entity\\Evenements::setDescription<\/a>"],[100,1,"<a href=\"Evenements.php.html#74\">App\\Entity\\Evenements::getUrlImage<\/a>"],[100,1,"<a href=\"Evenements.php.html#79\">App\\Entity\\Evenements::setUrlImage<\/a>"],[100,1,"<a href=\"Evenements.php.html#86\">App\\Entity\\Evenements::getLogo<\/a>"],[100,1,"<a href=\"Evenements.php.html#91\">App\\Entity\\Evenements::setLogo<\/a>"],[0,1,"<a href=\"Evenements.php.html#100\">App\\Entity\\Evenements::getDisplayDetails<\/a>"],[100,1,"<a href=\"Orders.php.html#81\">App\\Entity\\Orders::__construct<\/a>"],[100,2,"<a href=\"Orders.php.html#89\">App\\Entity\\Orders::generateOrderKey<\/a>"],[100,2,"<a href=\"Orders.php.html#99\">App\\Entity\\Orders::addOrderItem<\/a>"],[75,3,"<a href=\"Orders.php.html#108\">App\\Entity\\Orders::removeOrderItem<\/a>"],[100,1,"<a href=\"Orders.php.html#118\">App\\Entity\\Orders::getOrderItems<\/a>"],[0,1,"<a href=\"Orders.php.html#125\">App\\Entity\\Orders::getId<\/a>"],[0,1,"<a href=\"Orders.php.html#130\">App\\Entity\\Orders::getUser<\/a>"],[0,1,"<a href=\"Orders.php.html#135\">App\\Entity\\Orders::setUser<\/a>"],[100,1,"<a href=\"Orders.php.html#141\">App\\Entity\\Orders::getOrderKey<\/a>"],[0,2,"<a href=\"Orders.php.html#146\">App\\Entity\\Orders::setOrderKey<\/a>"],[0,1,"<a href=\"Orders.php.html#155\">App\\Entity\\Orders::getOrderDate<\/a>"],[0,1,"<a href=\"Orders.php.html#160\">App\\Entity\\Orders::setOrderDate<\/a>"],[100,1,"<a href=\"Orders.php.html#166\">App\\Entity\\Orders::getTotalPrice<\/a>"],[100,1,"<a href=\"Orders.php.html#171\">App\\Entity\\Orders::setTotalPrice<\/a>"],[100,1,"<a href=\"Orders.php.html#177\">App\\Entity\\Orders::getFirstName<\/a>"],[100,1,"<a href=\"Orders.php.html#182\">App\\Entity\\Orders::setFirstName<\/a>"],[100,1,"<a href=\"Orders.php.html#188\">App\\Entity\\Orders::getLastName<\/a>"],[100,1,"<a href=\"Orders.php.html#193\">App\\Entity\\Orders::setLastName<\/a>"],[100,1,"<a href=\"Orders.php.html#199\">App\\Entity\\Orders::getEmail<\/a>"],[100,1,"<a href=\"Orders.php.html#204\">App\\Entity\\Orders::setEmail<\/a>"],[100,1,"<a href=\"Orders.php.html#210\">App\\Entity\\Orders::getAddress<\/a>"],[100,1,"<a href=\"Orders.php.html#215\">App\\Entity\\Orders::setAddress<\/a>"],[100,1,"<a href=\"Orders.php.html#221\">App\\Entity\\Orders::getPostalCode<\/a>"],[100,1,"<a href=\"Orders.php.html#226\">App\\Entity\\Orders::setPostalCode<\/a>"],[100,1,"<a href=\"Orders.php.html#232\">App\\Entity\\Orders::getCity<\/a>"],[100,1,"<a href=\"Orders.php.html#237\">App\\Entity\\Orders::setCity<\/a>"],[100,1,"<a href=\"Orders.php.html#243\">App\\Entity\\Orders::getCountry<\/a>"],[100,1,"<a href=\"Orders.php.html#248\">App\\Entity\\Orders::setCountry<\/a>"],[0,1,"<a href=\"Orders.php.html#254\">App\\Entity\\Orders::isPaid<\/a>"],[0,1,"<a href=\"Orders.php.html#259\">App\\Entity\\Orders::setPaid<\/a>"],[0,1,"<a href=\"Orders.php.html#264\">App\\Entity\\Orders::isScanned<\/a>"],[0,1,"<a href=\"Orders.php.html#269\">App\\Entity\\Orders::setScanned<\/a>"],[0,3,"<a href=\"Orders.php.html#274\">App\\Entity\\Orders::updateScannedStatus<\/a>"],[0,1,"<a href=\"OrdersItem.php.html#42\">App\\Entity\\OrdersItem::generateUniqueTicketKey<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#52\">App\\Entity\\OrdersItem::__construct<\/a>"],[0,3,"<a href=\"OrdersItem.php.html#60\">App\\Entity\\OrdersItem::generateSecureTicketKey<\/a>"],[0,1,"<a href=\"OrdersItem.php.html#73\">App\\Entity\\OrdersItem::getId<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#78\">App\\Entity\\OrdersItem::getOrder<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#83\">App\\Entity\\OrdersItem::setOrder<\/a>"],[0,1,"<a href=\"OrdersItem.php.html#89\">App\\Entity\\OrdersItem::getUser<\/a>"],[0,1,"<a href=\"OrdersItem.php.html#94\">App\\Entity\\OrdersItem::setUser<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#100\">App\\Entity\\OrdersItem::getOrderKey<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#105\">App\\Entity\\OrdersItem::setOrderKey<\/a>"],[0,1,"<a href=\"OrdersItem.php.html#111\">App\\Entity\\OrdersItem::getUniqueTicketKey<\/a>"],[0,1,"<a href=\"OrdersItem.php.html#116\">App\\Entity\\OrdersItem::setUniqueTicketKey<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#122\">App\\Entity\\OrdersItem::getQrCodePath<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#127\">App\\Entity\\OrdersItem::setQrCodePath<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#133\">App\\Entity\\OrdersItem::getBillet<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#138\">App\\Entity\\OrdersItem::setBillet<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#144\">App\\Entity\\OrdersItem::getQuantite<\/a>"],[100,1,"<a href=\"OrdersItem.php.html#148\">App\\Entity\\OrdersItem::setQuantite<\/a>"],[100,1,"<a href=\"Panier.php.html#37\">App\\Entity\\Panier::__construct<\/a>"],[100,1,"<a href=\"Panier.php.html#44\">App\\Entity\\Panier::getId<\/a>"],[100,1,"<a href=\"Panier.php.html#49\">App\\Entity\\Panier::getBillet<\/a>"],[100,1,"<a href=\"Panier.php.html#54\">App\\Entity\\Panier::setBillet<\/a>"],[100,1,"<a href=\"Panier.php.html#59\">App\\Entity\\Panier::getQuantite<\/a>"],[100,1,"<a href=\"Panier.php.html#64\">App\\Entity\\Panier::setQuantite<\/a>"],[100,1,"<a href=\"Panier.php.html#70\">App\\Entity\\Panier::getUser<\/a>"],[100,1,"<a href=\"Panier.php.html#75\">App\\Entity\\Panier::setUser<\/a>"],[100,1,"<a href=\"Panier.php.html#81\">App\\Entity\\Panier::getMontant<\/a>"],[0,1,"<a href=\"Panier.php.html#86\">App\\Entity\\Panier::setMontant<\/a>"],[0,1,"<a href=\"Panier.php.html#92\">App\\Entity\\Panier::getCreatedAt<\/a>"],[0,1,"<a href=\"Panier.php.html#97\">App\\Entity\\Panier::setCreatedAt<\/a>"],[100,2,"<a href=\"Panier.php.html#103\">App\\Entity\\Panier::getTotalBillets<\/a>"],[100,1,"<a href=\"Payment.php.html#40\">App\\Entity\\Payment::__construct<\/a>"],[0,1,"<a href=\"Payment.php.html#47\">App\\Entity\\Payment::getId<\/a>"],[0,1,"<a href=\"Payment.php.html#52\">App\\Entity\\Payment::getMontant<\/a>"],[100,1,"<a href=\"Payment.php.html#57\">App\\Entity\\Payment::setMontant<\/a>"],[0,1,"<a href=\"Payment.php.html#63\">App\\Entity\\Payment::getMethodePaiement<\/a>"],[100,1,"<a href=\"Payment.php.html#68\">App\\Entity\\Payment::setMethodePaiement<\/a>"],[0,1,"<a href=\"Payment.php.html#74\">App\\Entity\\Payment::getStatutPaiement<\/a>"],[0,1,"<a href=\"Payment.php.html#79\">App\\Entity\\Payment::setStatutPaiement<\/a>"],[100,1,"<a href=\"Payment.php.html#85\">App\\Entity\\Payment::getDateCreation<\/a>"],[100,1,"<a href=\"Payment.php.html#90\">App\\Entity\\Payment::getClePaiement<\/a>"],[100,1,"<a href=\"Payment.php.html#95\">App\\Entity\\Payment::getBillet<\/a>"],[100,1,"<a href=\"Payment.php.html#100\">App\\Entity\\Payment::setBillet<\/a>"],[0,1,"<a href=\"Payment.php.html#106\">App\\Entity\\Payment::getUtilisateur<\/a>"],[0,1,"<a href=\"Payment.php.html#111\">App\\Entity\\Payment::setUtilisateur<\/a>"],[100,1,"<a href=\"User.php.html#98\">App\\Entity\\User::__construct<\/a>"],[0,1,"<a href=\"User.php.html#112\">App\\Entity\\User::getId<\/a>"],[0,1,"<a href=\"User.php.html#117\">App\\Entity\\User::getUsername<\/a>"],[0,1,"<a href=\"User.php.html#122\">App\\Entity\\User::setUsername<\/a>"],[0,1,"<a href=\"User.php.html#128\">App\\Entity\\User::getFirstName<\/a>"],[0,1,"<a href=\"User.php.html#133\">App\\Entity\\User::setFirstName<\/a>"],[0,1,"<a href=\"User.php.html#139\">App\\Entity\\User::getEmail<\/a>"],[0,1,"<a href=\"User.php.html#144\">App\\Entity\\User::setEmail<\/a>"],[0,1,"<a href=\"User.php.html#150\">App\\Entity\\User::getPassword<\/a>"],[0,1,"<a href=\"User.php.html#155\">App\\Entity\\User::setPassword<\/a>"],[0,1,"<a href=\"User.php.html#161\">App\\Entity\\User::getPlainPassword<\/a>"],[0,1,"<a href=\"User.php.html#166\">App\\Entity\\User::setPlainPassword<\/a>"],[0,1,"<a href=\"User.php.html#172\">App\\Entity\\User::getTerms<\/a>"],[0,1,"<a href=\"User.php.html#177\">App\\Entity\\User::setTerms<\/a>"],[0,1,"<a href=\"User.php.html#184\">App\\Entity\\User::getCreatedAt<\/a>"],[0,1,"<a href=\"User.php.html#189\">App\\Entity\\User::setCreatedAt<\/a>"],[0,1,"<a href=\"User.php.html#196\">App\\Entity\\User::getPaniers<\/a>"],[0,3,"<a href=\"User.php.html#211\">App\\Entity\\User::setPanier<\/a>"],[0,1,"<a href=\"User.php.html#235\">App\\Entity\\User::getPaiements<\/a>"],[0,2,"<a href=\"User.php.html#240\">App\\Entity\\User::addPaiement<\/a>"],[0,3,"<a href=\"User.php.html#250\">App\\Entity\\User::removePaiement<\/a>"],[0,1,"<a href=\"User.php.html#262\">App\\Entity\\User::getUserKey<\/a>"],[0,1,"<a href=\"User.php.html#267\">App\\Entity\\User::setUserKey<\/a>"],[0,1,"<a href=\"User.php.html#273\">App\\Entity\\User::isActive<\/a>"],[0,1,"<a href=\"User.php.html#278\">App\\Entity\\User::setActive<\/a>"],[0,1,"<a href=\"User.php.html#287\">App\\Entity\\User::getResetToken<\/a>"],[0,1,"<a href=\"User.php.html#292\">App\\Entity\\User::setResetToken<\/a>"],[0,1,"<a href=\"User.php.html#298\">App\\Entity\\User::getResetTokenExpiresAt<\/a>"],[0,1,"<a href=\"User.php.html#303\">App\\Entity\\User::setResetTokenExpiresAt<\/a>"],[0,1,"<a href=\"User.php.html#309\">App\\Entity\\User::getRoles<\/a>"],[0,1,"<a href=\"User.php.html#314\">App\\Entity\\User::setRoles<\/a>"],[0,1,"<a href=\"User.php.html#320\">App\\Entity\\User::eraseCredentials<\/a>"],[0,1,"<a href=\"User.php.html#326\">App\\Entity\\User::getUserIdentifier<\/a>"],[0,1,"<a href=\"User.php.html#335\">App\\Entity\\User::getOrders<\/a>"],[0,2,"<a href=\"User.php.html#340\">App\\Entity\\User::addOrder<\/a>"],[0,3,"<a href=\"User.php.html#350\">App\\Entity\\User::removeOrder<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

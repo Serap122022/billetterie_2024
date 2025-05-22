@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Billetterie Jeux Olympiques{% endblock %}
+
+{% block body %}
+    {% include '_admin/_navbar.html.twig' %}
+
+    {% block main %}
+    <main class="container">
+        <div class="container px-4 py-5 bg-opacity-50 rounded" id="hanging-icons">
+            <h2 class="pb-2 mb-4 border-bottom text-center" style="margin-top: 30px;">Bienvenue sur la page de gestion du site</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+
+                <div class="col-sm-6 mb-3 mb-sm-0"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Créer Billets</h5>
+                            <p class="card-text">Vous pouvez créer les billets en cliquant sur le bouton ci-dessous.</p>
+                            <a href="{{ path('billet_new') }}" class="btn btn-danger">Créer billets</a>
+                            <a href="{{ path('billet_index') }}" class="btn btn-danger">Voir tous les billets</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 mb-3 mb-sm-0"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Voir les stocks des billets</h5>
+                            <p class="card-text">Vous pouvez voir le total des billets vendus en cliquant sur le bouton ci-dessous.</p>
+                            <a href="{{ path('ventes') }}" class="btn btn-danger">Voir les billets vendus</a> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 mb-3 mb-sm-0"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Voir les Utilisateurs</h5>
+                            <p class="card-text">Vous pouvez voir les utilisateurs en cliquant sur le bouton ci-dessous.</p>
+                            <a href="{{ path('app_user') }}" class="btn btn-danger">Voir tous les utilisateurs</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-sm-6 mb-3 mb-sm-0"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Créer les Employés</h5>
+                            <p class="card-text">Vous pouvez créer les employés en cliquant sur le bouton ci-dessous.</p>
+                            <a href="{{ path('app_admin_employes_new') }}" class="btn btn-danger">Créer les Employés</a>
+                             <a href="{{ path('app_admin_employes_index') }}" class="btn btn-danger">Voir les Employés</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+
+    {% include "_admin/_footer.html.twig" %}
+{% endblock %}

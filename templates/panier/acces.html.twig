@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Passer au Paiement{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+
+<main class="container mt-5" style="margin-top: 90px !important;">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Pour passer au paiement</h1>
+        <h4 class="text-center mb-4">Vous devez vous inscrire ou vous connecter pour finaliser votre achat.</h4>
+        
+        <div class="text-center">
+            <a href="{{ path('app_register') }}" class="btn btn-primary me-3">
+                <i class="fa fa-user-plus"></i> Inscription
+            </a>
+            <a href="{{ path('app_login') }}" class="btn btn-secondary">
+                <i class="fa fa-sign-in-alt"></i> Connexion
+            </a>
+        </div>
+    </div>
+    </main>
+    {% include "home/_footer.html.twig" %}
+
+{% endblock %}

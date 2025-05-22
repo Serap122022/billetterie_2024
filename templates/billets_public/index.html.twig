@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Billetterie Jeux Olympiques{% endblock %}
+
+{% block body %}
+    {% include 'home/_navbar.html.twig' %}
+
+    <main class="mt-5 py-5">
+        <section class="jumbotron text-center">
+            <p class="fs-3">Achat de billet pour les Jeux Olympiques </br> Paralympiques France</p>
+            <p class="lead fs-5">Réservez vos billets pour les Jeux Olympiques France 2024</p>
+        </section>
+        
+        <section class="container">
+            <h2 class="text-center mb-3 fs-4">Types de billets</h2>
+
+            <div class="row justify-content-center">
+                {% if billets is not empty %}
+                    {% for billet in billets %}
+                        <div class="col-md-4">
+                            <div class="card mt-3 text-center">
+                                <h5 class="card-title fs-5 mt-3">{{ billet.type|capitalize }}</h5>
+                                <p class="card-text fs-5">Tarif : {{ billet.tarif }}€</p>
+                                
+                                <div class="mb-3 row justify-content-center align-items-center">
+                                    <label for="quantity_{{ billet.id }}" class="col-form-label col-sm-3 text-center">Quantité:</label>
+                                    <div class="col-sm-4">
+                                        <input type="number" id="quantity_{{ billet.id }}" name="quantity[{{ billet.id }}]" min="0" value="" class="form-control fs-5" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-center">Aucun billet disponible pour le moment.</p>
+                {% endif %}
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="button" id="add-to-cart" class="btn btn-danger rounded-pill py-2 px-4">
+                    <i class="fa-solid fa-cart-shopping ms-3"></i> Ajouter au panier
+                </button>
+                <a href="{{ path('panier_index') }}" class="btn btn-secondary rounded-pill fs-6 ms-3">Voir le panier</a>
+            </div>
+        </section>
+    </main>
+
+    {% include "home/_footer.html.twig" %}
+
+
+
+
+{% block JavaScript %}
+<script>
+console.log("Script bien chargé");
+
+    setInterval(function() {
+        $.ajax({
+            url: '{{ path("panier_index") }}',
+            success: function(data) {
+                let contenu = $(data).find("#contenu-panier").html();
+                $("#contenu-panier").html(contenu);
+            }
+        });
+    }, 1000); // Rafraîchissement toutes les 1 secondes
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const addToCartButton = document.getElementById('add-to-cart');
+
+    addToCartButton.addEventListener('click', function (e) {
+        e.preventDefault(); 
+        // Récupère les quantités pour chaque billet
+        const quantityInputs = document.querySelectorAll('[id^="quantity_"]');
+        let allTickets = [];
+
+        quantityInputs.forEach(input => {
+            const ticketId = input.id.split('_')[1];
+            const quantity = parseInt(input.value) || 0;
+            if (quantity > 0) {
+                allTickets.push({ id: ticketId, quantity });
+            }
+        });
+
+        if (allTickets.length > 0) {
+            // Envoit une requête pour chaque billet sélectionné
+            const promises = allTickets.map(ticket => {
+                return fetch(`/${ticket.id}/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded' // Change le type de contenu
+                    },
+                    body: new URLSearchParams({ quantity: ticket.quantity }) // Utilise URLSearchParams pour envoyer les données
+                });
+            });
+
+            Promise.all(promises)
+                .then(responses => {
+                    // Vérifie que toutes les réponses sont OK
+                    responses.forEach(response => {
+                        if (!response.ok) throw new Error('Erreur lors de l\'ajout au panier');
+                    });
+                    // Affiche un message et recharger la page
+                    alert('Billets ajoutés au panier.');
+                    location.reload(); // Recharge la page immédiatement
+                })
+                .catch(error => console.error('Erreur:', error));
+        } else {
+            alert('Sélectionnez une quantité valide pour au moins un billet.');
+        }
+    });
+});
+
+</script>
+    {% endblock %}
+
+{% endblock %} 
+

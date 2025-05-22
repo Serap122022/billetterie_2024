@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails du Billet{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .custom-space {
+        margin-top: 60px !important; 
+        padding-top: 50px;
+    }
+
+    .btn-custom {
+        margin-right: 5px; /* Espacement entre les boutons */
+    }
+
+    .half-width {
+        width: 50%; /* Définit la largeur à 50% */
+        margin: 0 auto; /* Centre l'élément horizontalement */
+    }
+
+    .action-buttons {
+        display: flex; /* Utilisation de flexbox pour aligner les boutons */
+        justify-content: center; /* Centre les boutons horizontalement */
+        margin-top: 20px; /* Espacement au-dessus des boutons */
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+{% include '_admin/_navbar.html.twig' %}
+
+<div class="container custom-space mt-5 half-width"> 
+    <h1 class="text-center mb-4">Détails du Billet</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Champ</th>
+                <th scope="col">Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Type de Billet</th>
+                <td>{{ billet.type }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Tarif</th>
+                <td>{{ billet.tarif }} €</td>
+            </tr>
+             <tr>
+                <th scope="row">Stock</th>
+                <td>{{ billet.stock }} </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="action-buttons">
+        <a href="{{ path('billet_edit', {'id': billet.id}) }}" class="btn btn-warning btn-custom">Modifier</a>
+        <a href="{{ path('billet_index') }}" class="btn btn-secondary btn-custom">Retour à la liste</a>
+
+        <!-- Formulaire de suppression -->
+        <form method="post" action="{{ path('billet_delete', {'id': billet.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément?');" style="display: inline;">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ billet.id) }}">
+            <button class="btn btn-danger btn-custom" type="submit">Supprimer</button>
+        </form>
+    </div>
+</div>
+
+    {{ include('_admin/gestion_billets/_delete_form.html.twig') }}
+</div>
+{% endblock %}

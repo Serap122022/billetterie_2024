@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include '_admin/_navbar.html.twig' %} 
+
+    <div class="container mt-5">
+        <h2 class="text-center">Scanner un billet</h2>
+
+        <div class="text-center">
+            <div id="reader" style="width: 300px; margin: auto;"></div>  
+            <p id="result" class="mt-3"></p>
+        </div>
+    </div>
+
+    {% include "_admin/_footer.html.twig" %}
+{% endblock %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    {# <script src="https://unpkg.com/html5-qrcode"></script> #}
+    <script src="https://unpkg.com/html5-qrcode@2.3.8"></script>
+
+    <script>     
+
+document.addEventListener("DOMContentLoaded", function () {
+    let scanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+
+    scanner.render(onScanSuccess);
+
+    function onScanSuccess(decodedText) {
+        fetch("/scan", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: "qrCode=" + encodeURIComponent(decodedText),
+        })
+        .then(response => response.text())
+        .then(message => {
+            let resultElement = document.getElementById("result");
+
+            // Vérifie le message pour ajuster la couleur
+            if (message.includes("Billet valide")) {
+                resultElement.style.color = "green";
+            } else if (message.includes("Billet déjà utilisé") || message.includes("Billet invalide")) {
+                resultElement.style.color = "red";
+            } else {
+                resultElement.style.color = "orange";
+            }
+
+            // Si le message contient un prix (ex: "Prix total: 4000"), on divise par 100 pour convertir en euros
+            if (message.includes("Prix total:")) {
+                message = message.replace(/Prix total: (\d+)/, function(match, p1) {
+                    let priceInCents = parseInt(p1); // Récupére le prix en centimes
+                    let priceInEuros = (priceInCents ).toFixed(2); // Divise par 100 pour obtenir le prix en euros
+                    priceInEuros = priceInEuros.replace(".", ","); // Remplace le point par une virgule
+
+                    return "Prix total: " + priceInEuros + " €"; // Retourne le prix formaté
+                });
+            }
+
+            // Afficher le message de validation
+            resultElement.textContent = message.replace(/\n/g, " | "); 
+        })
+        .catch(error => {
+            console.error("Erreur:", error);
+            document.getElementById("result").textContent = "Une erreur est survenue.";
+        });
+    }
+});
+
+    </script>
+{% endblock %}
