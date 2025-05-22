@@ -52,7 +52,7 @@ Structure du projet : MVC (Model - View - Controller)
 - Inscription et connexion des utilisateurs (sécurisée)
 - Navigation des événements et sélection des billets
 - Ajout au panier avec différentes offres (solo, duo, familiale)
-- Paiement en ligne sécurisé (Stripe)
+- Paiement en ligne sécurisé (Stripe en local et Mock en prod)
 - Génération de QR Code après achat
 - Téléchargement des billets au format JPG
 - Espace admin pour gestion des billets, stocks, employés et utilisateurs
@@ -81,7 +81,7 @@ Structure du projet : MVC (Model - View - Controller)
 ## Structure du projet
 
 ```bash
-olympics-ticketing/
+billetterie-2024/
 │
 ├── assets/                 # Fichiers sources (SCSS, JS)
 ├── public/                 # Ressources accessibles publiquement
