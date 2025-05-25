@@ -8,7 +8,6 @@
     <main class="container mt-5" style="margin-top: 90px !important;">
         <h2 class="text-center mb-4">Votre Panier</h2>
 
-        {# {% if panierItems is not empty %} #}
             <table class="table table-bordered text-center">
                 <thead>
                     <tr>
@@ -20,31 +19,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item in panierItems %}
-                        <tr>
-                           <td>{{ item.billet.displayType | capitalize }}</td>
-                            <td>{{ item.quantite }}</td>
-                            <td>{{ item.billet.tarif }}€</td>
-                            <td>{{ item.billet.tarif * item.quantite }}€</td>
-                            <td>
-                                <form action="{{ path('panier_add', {id: item.billet.id}) }}" method="POST" style="display:inline;">
-                                    <input type="hidden" name="quantity" id="quantity-{{ item.billet.id }}" value="1">
-                                    <button type="submit" class="btn btn-success">
-                                        <i class="fa-solid fa-plus"></i>
-                                    </button>
-                                </form>
-                                <a href="{{ path('panier_remove', {id: item.billet.id}) }}" class="btn btn-warning">
-                                    <i class="fa-solid fa-minus"></i>
-                                </a>
-                                <a href="{{ path('panier_delete', {id: item.billet.id}) }}" class="btn btn-danger">
-                                    <i class="fa-regular fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        
+                {% for item in panierItems %}
+                    <tr>
+                        <td>{{ item.billet.displayType | capitalize }}</td>
+                        <td>{{ item.quantite | number_format(0, ',', ' ') }}</td>
+                        <td>{{ item.billet.tarif | number_format(0, ',', ' ') }}€</td>
+                        <td>{{ (item.billet.tarif * item.quantite) | number_format(0, ',', ' ') }}€</td>
+                        <td>
+                            <form action="{{ path('panier_add', {id: item.billet.id}) }}" method="POST" style="display:inline;">
+                                <input type="hidden" name="quantity" id="quantity-{{ item.billet.id }}" value="1">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </form>
+                            <a href="{{ path('panier_remove', {id: item.billet.id}) }}" class="btn btn-warning">
+                                <i class="fa-solid fa-minus"></i>
+                            </a>
+                            <a href="{{ path('panier_delete', {id: item.billet.id}) }}" class="btn btn-danger">
+                                <i class="fa-regular fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
         <div class="text-center mt-4 d-flex justify-content-center">
             <a href="{{ path('billets_public') }}" class="btn btn-secondary mx-2"> 
                 <i class="fa-solid fa-arrow-left"></i> Retour aux billets
@@ -53,20 +52,16 @@
                 <i class="fa-regular fa-trash"></i> Vider le panier
             </a>
 
-        
-{% if app.user and is_granted('ROLE_USER') %}
-    <!-- Si l'utilisateur est connecté et a le rôle "ROLE_USER", diriger vers le paiement -->
-    <a href="{{ path('app_order') }}" class="btn btn-success mx-2">
-        <i class="fa-solid fa-credit-card"></i> Passer au paiement
-    </a>
-{% else %}
-    <!-- Sinon, diriger vers la connexion ou une autre page -->
-    <a href="{{ path('panier_acces') }}" class="btn btn-success mx-2">
-        <i class="fa-solid fa-credit-card"></i> Passer au paiement
-    </a>
-{% endif %}
+            {% if app.user and is_granted('ROLE_USER') %}
+                <a href="{{ path('app_order') }}" class="btn btn-success mx-2">
+                    <i class="fa-solid fa-credit-card"></i> Passer au paiement
+                </a>
+            {% else %}
+                <a href="{{ path('panier_acces') }}" class="btn btn-success mx-2">
+                    <i class="fa-solid fa-credit-card"></i> Passer au paiement
+                </a>
+            {% endif %}
         </div>
     </main>
     {% include "home/_footer.html.twig" %}
-
 {% endblock %}

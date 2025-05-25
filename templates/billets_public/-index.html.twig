@@ -12,13 +12,6 @@
         </section>
         
         <section class="container">
-        {% for message in app.flashes('danger') %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ message }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-    </div>
-{% endfor %}
-
             <h2 class="text-center mb-3 fs-4">Types de billets</h2>
 
             <div class="row justify-content-center">
@@ -28,20 +21,20 @@
                             <div class="card mt-3 text-center">
                                 <h5 class="card-title fs-5 mt-3">{{ billet.type|capitalize }}</h5>
                                 <p class="card-text fs-5">Tarif : {{ billet.tarif }}€</p>
-                                <p class="card-text text-danger fw-bold">Stock restant : {{ billet.stock|number_format(0, '', ' ') }} billets</p>
+                                <p class="text-danger fs-6">Stock restant : {{ billet.stock }}</p>
+
                                 <div class="mb-3 row justify-content-center align-items-center">
                                     <label for="quantity_{{ billet.id }}" class="col-form-label col-sm-3 text-center">Quantité:</label>
                                     <div class="col-sm-4">
-                                      <input type="number"
-                                        id="quantity_{{ billet.id }}"
-                                        name="quantity[{{ billet.id }}]"
-                                        min="0"
-                                        max="{{ billet.stock }}"
-                                        value=""
-                                        class="form-control fs-5"
-                                        data-name="{{ billet.type|capitalize }}"
-                                        data-stock="{{ billet.stock }}" />
-
+                                        <input
+                                            type="number"
+                                            id="quantity_{{ billet.id }}"
+                                            name="quantity[{{ billet.id }}]"
+                                            min="0"
+                                            value=""
+                                            class="form-control fs-5"
+                                            data-stock="{{ billet.stock }}"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -62,41 +55,49 @@
     </main>
 
     {% include "home/_footer.html.twig" %}
+{% endblock %}
 
 {% block JavaScript %}
 <script>
+console.log("Script bien chargé");
+
+setInterval(function() {
+    $.ajax({
+        url: '{{ path("panier_index") }}',
+        success: function(data) {
+            let contenu = $(data).find("#contenu-panier").html();
+            $("#contenu-panier").html(contenu);
+        }
+    });
+}, 1000); // Rafraîchissement toutes les 1 secondes
+
 document.addEventListener('DOMContentLoaded', function () {
     const addToCartButton = document.getElementById('add-to-cart');
 
     addToCartButton.addEventListener('click', function (e) {
-        e.preventDefault();
+        e.preventDefault(); 
+
         const quantityInputs = document.querySelectorAll('[id^="quantity_"]');
         let allTickets = [];
-        let errorMessages = [];
+        let erreurStock = false;
 
         quantityInputs.forEach(input => {
             const ticketId = input.id.split('_')[1];
-            const ticketName = input.dataset.name;
             const quantity = parseInt(input.value) || 0;
-            const max = parseInt(input.max);
+            const stock = parseInt(input.dataset.stock);
 
             if (quantity > 0) {
-                if (quantity > max) {
-                    // Collecte des messages d’erreur
-                    errorMessages.push(`❌ "${ticketName}" dépasse le stock disponible (${max.toLocaleString('fr-FR')})`);
+                if (quantity > stock) {
+                    erreurStock = true;
+                    alert(`❌ La quantité demandée pour le billet ID ${ticketId} dépasse le stock disponible (${stock} billets restants).`);
                 } else {
-                    // Billet valide, on l'ajoute
                     allTickets.push({ id: ticketId, quantity });
                 }
             }
         });
 
-        // Affichage des erreurs s’il y en a
-        if (errorMessages.length > 0) {
-            alert(errorMessages.join('\n'));
-        }
+        if (erreurStock) return;
 
-        // Si au moins un billet est valide, on les ajoute au panier
         if (allTickets.length > 0) {
             const promises = allTickets.map(ticket => {
                 return fetch(`/${ticket.id}/add`, {
@@ -113,19 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     responses.forEach(response => {
                         if (!response.ok) throw new Error('Erreur lors de l\'ajout au panier');
                     });
-                    alert('✅ Les billets valides ont été ajoutés au panier.');
+                    alert('✅ Billets ajoutés au panier.');
                     location.reload();
                 })
                 .catch(error => console.error('Erreur:', error));
-        } else if (errorMessages.length === 0) {
+        } else {
             alert('❗ Sélectionnez une quantité valide pour au moins un billet.');
         }
     });
 });
-
-
 </script>
-    {% endblock %}
-
-{% endblock %} 
-
+{% endblock %}
